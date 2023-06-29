@@ -42,7 +42,7 @@ export default function CalendarDemo() {
 
   const [open, setOpen] = useState(false);
   const [openEvent, SetOpenEvent] = useState(false);
-  const [eventData, setEventData] = useState({
+  let [eventData, setEventData] = useState({
     Id: "",
     title: "",
     Disease: "",
@@ -70,9 +70,12 @@ export default function CalendarDemo() {
     [setEventInfo, setOpen]
   );
 
-  const handleSubmit = () => {
+  const handleSubmit = (edit) => {
     console.log("eventData", eventData);
     console.log("eventInfo", eventInfo);
+    if (edit) {
+      eventData = { ...currentEvent };
+    }
     const Id = events[events.length - 1].Id + 1;
     const i = events.indexOf(events.find((val) => val.Id === eventData.Id));
     if (eventData.title) {
@@ -100,7 +103,9 @@ export default function CalendarDemo() {
             title: "Updated Appointment",
             Message:
               eventData &&
-              `${eventData.title} for consultation  with ${eventData.DoctorName}`,
+              `${eventData.title} for consultation on ${
+                eventInfo[0] && eventInfo[0].toLocaleString()
+              } with ${eventData.DoctorName}`,
             Time: "just now",
           },
           ...prev,
@@ -108,6 +113,7 @@ export default function CalendarDemo() {
       }
     }
     // new Date().
+    console.log(currentEvent, eventData);
 
     setEventData({ title: "" });
   };

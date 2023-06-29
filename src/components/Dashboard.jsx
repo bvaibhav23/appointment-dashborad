@@ -10,11 +10,7 @@ import RecentActivities from "./RecentActivities";
 
 const Dashboard = () => {
   const { events } = useContext(DataContext);
-  // const [todaysEvents,setTodaysEvents]=useState();
-  // console.log(events);
-  // useEffect(()=>{
 
-  // },[])
   //Todays appointments
   const today = new Date();
   const todaysEvents = events.filter(
@@ -31,8 +27,8 @@ const Dashboard = () => {
     (event) => event.start >= startOfWeek && event.start <= endOfWeek
   );
 
-  console.log(todaysEvents);
-  console.log("Week", weeksEvents);
+  // console.log(todaysEvents);
+  // console.log("Week", weeksEvents);
   return (
     <Grid
       bgcolor="#f8f9fa"

@@ -148,7 +148,7 @@ function EditEvent({ open, setOpen, eventData, setEventData, handleSubmit }) {
       setOpen={setOpen}
       eventData={eventData}
       setEventData={setEventData}
-      handleSubmit={handleSubmit}
+      handleSubmit={() => handleSubmit(true)}
       edit={true}
     />
   );

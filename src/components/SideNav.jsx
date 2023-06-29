@@ -132,12 +132,9 @@ function ResponsiveDrawer(props) {
           backgroundColor: "#7575ef",
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-          height: 50,
         }}>
         <Toolbar
           sx={{
-            height: 10,
-            pb: 2,
             display: "flex",
             justifyContent: "space-between",
           }}>
