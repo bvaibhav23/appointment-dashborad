@@ -1,0 +1,127 @@
+import { Autocomplete, Box, Stack, TextField, Typography } from "@mui/material";
+import React, { useContext } from "react";
+import {
+  colorCategory,
+  dayOfWeekList,
+  endHours,
+  startHours,
+  timeSlots,
+  views,
+} from "./DataSource";
+import { DataContext } from "./dataContext";
+
+const Preferences = () => {
+  const { preferences, setPreferences } = useContext(DataContext);
+  return (
+    <Box p={5}>
+      <Typography
+        variant="h6"
+        fontWeight="bold"
+        display="inline-block"
+        borderBottom={".2rem solid #7575ff"}>
+        Preferences
+      </Typography>
+
+      <Stack mt={3}>
+        <Stack gap={1}>
+          <Typography
+            variant="p"
+            fontSize="small"
+            color="GrayText"
+            fontWeight="bold">
+            Default View
+          </Typography>
+          <Autocomplete
+            disablePortal
+            value={preferences.view}
+            options={views.map((v) => v.Text)}
+            onChange={(e, v) => setPreferences({ ...preferences, view: v })}
+            size="small"
+            sx={{ width: { md: 400, xs: "80%" } }}
+            renderInput={(params) => <TextField {...params} />}></Autocomplete>
+        </Stack>
+        <Stack gap={1}>
+          <Typography
+            variant="p"
+            fontSize="small"
+            color="GrayText"
+            fontWeight="bold">
+            Calendar Start Time
+          </Typography>
+          <Autocomplete
+            disablePortal
+            options={startHours.map((v) => v.Text)}
+            size="small"
+            sx={{ width: { md: 400, xs: "80%" } }}
+            renderInput={(params) => <TextField {...params} />}></Autocomplete>
+        </Stack>
+        <Stack gap={1}>
+          <Typography
+            variant="p"
+            fontSize="small"
+            color="GrayText"
+            fontWeight="bold">
+            Calender End Time
+          </Typography>
+          <Autocomplete
+            disablePortal
+            options={endHours.map((v) => v.Text)}
+            size="small"
+            sx={{ width: { md: 400, xs: "80%" } }}
+            renderInput={(params) => <TextField {...params} />}></Autocomplete>
+        </Stack>
+        <Stack gap={1}>
+          <Typography
+            variant="p"
+            fontSize="small"
+            color="GrayText"
+            fontWeight="bold">
+            Slot Duration
+          </Typography>
+          <Autocomplete
+            disablePortal
+            options={timeSlots.map((v) => v.Text)}
+            value={preferences.slot}
+            onChange={(e, v) => {
+              setPreferences({ ...preferences, slot: v });
+            }}
+            size="small"
+            sx={{ width: { md: 400, xs: "80%" } }}
+            renderInput={(params) => <TextField {...params} />}></Autocomplete>
+        </Stack>
+        <Stack gap={1}>
+          <Typography
+            variant="p"
+            fontSize="small"
+            color="GrayText"
+            fontWeight="bold">
+            Booking Color
+          </Typography>
+          <Autocomplete
+            disablePortal
+            options={colorCategory.map((v) => v.Text)}
+            size="small"
+            sx={{ width: { md: 400, xs: "80%" } }}
+            renderInput={(params) => <TextField {...params} />}></Autocomplete>
+        </Stack>
+        <Stack gap={1}>
+          <Typography
+            variant="p"
+            fontSize="small"
+            color="GrayText"
+            fontWeight="bold">
+            Week Start With
+          </Typography>
+          <Autocomplete
+            disablePortal
+            options={dayOfWeekList.map((v) => v.Text)}
+            size="small"
+            sx={{ width: { md: 400, xs: "80%" } }}
+            renderInput={(params) => <TextField {...params} />}></Autocomplete>
+        </Stack>
+      </Stack>
+    </Box>
+  );
+};
+
+export default Preferences;

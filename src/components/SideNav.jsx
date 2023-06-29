@@ -1,0 +1,226 @@
+import React, { useEffect, useState } from "react";
+import Box from "@mui/material/Box";
+import PropTypes from "prop-types";
+import Drawer from "@mui/material/Drawer";
+import CssBaseline from "@mui/material/CssBaseline";
+import Toolbar from "@mui/material/Toolbar";
+import List from "@mui/material/List";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+
+import docLogo from "../6014550_coronavirus_doctor_female_white_icon.svg";
+import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
+import GitHubIcon from "@mui/icons-material/GitHub";
+
+import sideBarData from "../data";
+import {
+  Link,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
+import Dashboard from "./Dashboard";
+import Scheduler from "./Scheduler";
+import Doctors from "./Doctors";
+import Patients from "./Patients";
+import Preferences from "./Preferences";
+import About from "./About";
+import { AppBar, Stack } from "@mui/material";
+import DoctorsInfo from "./DoctorsInfo";
+
+const drawerWidth = 240;
+
+function ResponsiveDrawer(props) {
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navTo = useNavigate();
+  const currURL = useLocation();
+  const [currPath, setCurrPath] = useState("/");
+  useEffect(() => {
+    setCurrPath(currURL.pathname);
+  }, [currURL]);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  const drawer = (
+    <div>
+      <Box
+        display="flex"
+        flexDirection="column"
+        m={3}
+        gap={1}
+        alignItems="center">
+        <Box borderRadius={15} boxShadow={3}>
+          <img
+            style={{
+              padding: "1px",
+              borderColor: "navy",
+            }}
+            width="75vh"
+            height="75vh"
+            src={docLogo}
+            alt="doc Logo"
+          />
+        </Box>
+        <Typography
+          borderBottom={1}
+          borderColor="navy"
+          mb={1}
+          variant="h6"
+          fontWeight="bold">
+          Jane Doe
+        </Typography>
+        <Typography color="GrayText" fontSize={14}>
+          Admin
+        </Typography>
+      </Box>
+      <Divider />
+      <List sx={{ pl: 0.5, pr: 0.5 }}>
+        {sideBarData.map((item) => (
+          <ListItem
+            sx={{
+              bgcolor:
+                currPath.slice(0, 4) === item.routeTo.slice(0, 4)
+                  ? "#7575ff"
+                  : "white",
+              color:
+                currPath.slice(0, 4) === item.routeTo.slice(0, 4)
+                  ? "white"
+                  : "#7575ff",
+              borderRadius: 2,
+              mb: 1,
+              mt: 1,
+            }}
+            onClick={() => {
+              navTo(item.routeTo);
+            }}
+            key={item.name}
+            disablePadding>
+            <ListItemButton>
+              <ListItemIcon sx={{ color: "inherit" }}>{item.icon}</ListItemIcon>
+              <ListItemText primary={item.name} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+    </div>
+  );
+
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+
+  return (
+    <Box
+      sx={{
+        display: "flex",
+      }}>
+      <CssBaseline />
+      <AppBar
+        position="fixed"
+        sx={{
+          backgroundColor: "#7575ef",
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          ml: { sm: `${drawerWidth}px` },
+          height: 50,
+        }}>
+        <Toolbar
+          sx={{
+            height: 10,
+            pb: 2,
+            display: "flex",
+            justifyContent: "space-between",
+          }}>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}>
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="p" fontSize={18} noWrap component="div">
+            APPOINTMENT PLANNER
+          </Typography>
+          <Stack direction="row" alignItems="center" gap={1}>
+            <LogoutRoundedIcon />
+            {/* <Typography variant="p" fontSize={14} noWrap component="div">
+              Logout
+            </Typography> */}
+            <IconButton>
+              <Link target="_blank" to="https://github.com/bvaibhav23">
+                <GitHubIcon sx={{ color: "white" }} />
+              </Link>
+            </IconButton>
+          </Stack>
+        </Toolbar>
+      </AppBar>
+      <Box
+        component="nav"
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        aria-label="mailbox folders">
+        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}>
+          {drawer}
+        </Drawer>
+        <Drawer
+          variant="permanent"
+          sx={{
+            display: { xs: "none", sm: "block" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+          open>
+          {drawer}
+        </Drawer>
+      </Box>
+      <Box component="main" sx={{ width: "100%", pt: 3, mt: 5 }}>
+        <Routes>
+          <Route path="/" element={<Dashboard />}></Route>
+          <Route path="/schedule" element={<Scheduler />}></Route>
+          <Route path="/doctors" element={<Doctors />}></Route>
+          <Route path="/patients" element={<Patients />}></Route>
+          <Route path="/preference" element={<Preferences />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/doctor/:doctorId" element={<DoctorsInfo />}></Route>
+        </Routes>
+      </Box>
+    </Box>
+  );
+}
+
+ResponsiveDrawer.propTypes = {
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+};
+
+export default ResponsiveDrawer;
