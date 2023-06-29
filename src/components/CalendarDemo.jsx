@@ -188,7 +188,7 @@ export default function CalendarDemo() {
           open={openEvent}
           setOpen={SetOpenEvent}
           currentEvent={currentEvent}
-          setEventData={setEventData}
+          setEventData={setCurrentEvent}
           handleSubmit={handleSubmit}
           handleDelete={handleDelete}
         />
@@ -414,9 +414,10 @@ export function FormOfDialog({
               // sx={{ mt: 1 }}
               size="small"
               value={eventData.Symptoms}
-              onChange={(e) =>
-                setEventData({ ...eventData, Symptoms: e.target.value })
-              }
+              onChange={(e) => {
+                console.log(eventData.Symptoms);
+                setEventData({ ...eventData, Symptoms: e.target.value });
+              }}
               rows={2}
             />
           </Stack>
