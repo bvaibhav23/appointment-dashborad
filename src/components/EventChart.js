@@ -65,7 +65,7 @@ export default function EventChart({ weeksEvents }) {
       }, {});
   }
   sortObj(DataAndLabel);
-  console.log("counts", DataAndLabel);
+  //console.log("counts", DataAndLabel);
 
   const data = {
     labels: [...new Set(weekLabels.sort())],

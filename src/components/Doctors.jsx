@@ -29,7 +29,7 @@ const Doctors = () => {
         currentDoctorsData.filter((val) => val.Specialization === specialty)
       );
   }, [specialty, currentDoctorsData]);
-  console.log(filterData);
+  // console.log(filterData);
   return (
     <Box p={5}>
       <Typography

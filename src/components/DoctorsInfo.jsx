@@ -20,12 +20,12 @@ const DoctorsInfo = () => {
       currentDoctorsData.find((info) => info.Id === Number(doctorId))
     );
   }, [doctorId, currentDoctorsData, open]);
-  console.log(doctorData);
+  // console.log(doctorData);
   //   const d=new Date();
   //   d.toLocaleTimeString
   const deleteDoctor = (id) => {
     navTO("/doctors");
-    console.log("id", id);
+    // console.log("id", id);
     setCurrentDoctorData(
       currentDoctorsData.filter((ele) => {
         // console.log(ele.Id, id);

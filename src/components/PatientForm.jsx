@@ -41,7 +41,7 @@ export default function FormDialog({ open, setOpen, currentPatient }) {
   useEffect(() => {
     if (currentPatient.Id) setNewPatient(currentPatient);
   }, [currentPatient]);
-  console.log("patient", currentPatient);
+  // console.log("patient", currentPatient);
   const addDoctor = () => {
     // setNewPatient(newPatient);
     if (!newPatient.Id)
@@ -51,7 +51,7 @@ export default function FormDialog({ open, setOpen, currentPatient }) {
       patientsInfo.find((val) => val.Id === holdPatient.Id)
     );
 
-    console.log(i);
+    // console.log(i);
     if (i > -1) patientsInfo[i] = newPatient;
     else setPatientsInfo((prev) => [...prev, newPatient]);
     setOpen(false);

@@ -57,7 +57,7 @@ const Patients = () => {
     // eslint-disable-next-line
     [search, patientsInfo]
   );
-  console.log(filterData);
+  // console.log(filterData);
 
   const displayPatient = (id) => {
     setCurrentPatient(patientsInfo.find((val) => val.Id === Number(id)));
@@ -74,7 +74,7 @@ const Patients = () => {
     );
   };
 
-  console.log(currentPatient);
+  // console.log(currentPatient);
   return (
     <Box p={5}>
       <Typography

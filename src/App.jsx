@@ -2,7 +2,6 @@ import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import { DataContext } from "./components/dataContext";
 import { useState } from "react";
-// import { eventsData } from "./data";
 import {
   hospitalData,
   doctorsData,

@@ -24,7 +24,7 @@ export default function EventForm({
   handleDelete,
 }) {
   const [openEdit, setOpenEdit] = useState(false);
-  console.log("show event", currentEvent);
+  // console.log("show event", currentEvent);
 
   const handleClose = () => {
     setOpen(false);

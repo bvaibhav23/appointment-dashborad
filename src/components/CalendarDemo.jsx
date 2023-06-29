@@ -57,7 +57,7 @@ export default function CalendarDemo() {
 
   const [currentEvent, setCurrentEvent] = useState();
   const [slotDuration, setSlotDuration] = useState();
-  console.log(preferences, slotDuration);
+  // console.log(preferences, slotDuration);
   const handleSelectSlot = useCallback(
     ({ start, end, slots }) => {
       setOpen(true);
@@ -71,8 +71,8 @@ export default function CalendarDemo() {
   );
 
   const handleSubmit = (edit) => {
-    console.log("eventData", eventData);
-    console.log("eventInfo", eventInfo);
+    // console.log("eventData", eventData);
+    // console.log("eventInfo", eventInfo);
     if (edit) {
       eventData = { ...currentEvent };
     }
@@ -113,7 +113,7 @@ export default function CalendarDemo() {
       }
     }
     // new Date().
-    console.log(currentEvent, eventData);
+    // console.log(currentEvent, eventData);
 
     setEventData({ title: "" });
   };
@@ -168,17 +168,17 @@ export default function CalendarDemo() {
             height: 600,
           }}
           eventPropGetter={(e) => {
-            if (e.DepartmentName === "GENERAL") {
+            if (e.DepartmentName === "General Medicine") {
               return { style: { backgroundColor: "#df5286" } };
-            } else if (e.DepartmentName === "NEUROLOGY") {
+            } else if (e.DepartmentName === "Neurology") {
               return { style: { backgroundColor: "#1aaa55" } };
-            } else if (e.DepartmentName === "DERMATOLOGY") {
+            } else if (e.DepartmentName === "Dermatology") {
               return { style: { backgroundColor: "#865fcf" } };
-            } else if (e.DepartmentName === "ORTHOPEDICS") {
+            } else if (e.DepartmentName === "Orthopedics") {
               return { style: { backgroundColor: "#fec200" } };
-            } else if (e.DepartmentName === "DIABETOLOGY") {
+            } else if (e.DepartmentName === "Dialectology") {
               return { style: { backgroundColor: "#ea7a57" } };
-            } else if (e.DepartmentName === "CARDIOLOGY") {
+            } else if (e.DepartmentName === "Cardiology") {
               return { style: { backgroundColor: "#00bdae" } };
             }
           }}
@@ -421,7 +421,6 @@ export function FormOfDialog({
               size="small"
               value={eventData.Symptoms}
               onChange={(e) => {
-                console.log(eventData.Symptoms);
                 setEventData({ ...eventData, Symptoms: e.target.value });
               }}
               rows={2}
@@ -454,31 +453,3 @@ export function FormOfDialog({
     </div>
   );
 }
-
-// export default function CalendarDemo() {
-//   const [myEventsList, setMyEvents] = useState([
-//     { start: new Date(), end: new Date(), title: "special event" },
-//   ]);
-
-//   const addEventHandle = (e) => {
-//     setMyEvents([
-//       ...myEventsList,
-//       { start: new Date(), end: new Date(), title: "special event" },
-//     ]);
-//     console.log(e);
-//   };
-//   return (
-//     <div className="App">
-//       <Calendar
-//         localizer={localizer}
-//         events={myEventsList}
-//         startAccessor="start"
-//         endAccessor="end"
-//         style={{ height: 500 }}
-//         selectable
-//         onSelectSlot={(e) => addEventHandle(e)}
-//         onSelectEvent={() => prompt()}
-//       />
-//     </div>
-//   );
-// }
