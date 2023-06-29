@@ -57,7 +57,7 @@ export default function CalendarDemo() {
 
   const [currentEvent, setCurrentEvent] = useState();
   const [slotDuration, setSlotDuration] = useState(
-    Number(preferences.slot.slice(0, 2))
+    Number(preferences.slot.slice(0, 3))
   );
 
   const handleSelectSlot = useCallback(
