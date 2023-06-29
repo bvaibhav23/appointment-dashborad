@@ -59,7 +59,7 @@ export default function CalendarDemo() {
   const [slotDuration, setSlotDuration] = useState(
     Number(preferences.slot.slice(0, 3))
   );
-
+  console.log(preferences, slotDuration);
   const handleSelectSlot = useCallback(
     ({ start, end, slots }) => {
       setOpen(true);
@@ -136,7 +136,7 @@ export default function CalendarDemo() {
   );
 
   useEffect(() => {
-    setSlotDuration(preferences.slot.slice(0, 2));
+    setSlotDuration(preferences.slot.slice(0, 3));
   }, [preferences.slot]);
   return (
     <Fragment>
