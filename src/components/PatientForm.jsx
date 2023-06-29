@@ -171,7 +171,8 @@ export default function FormDialog({ open, setOpen, currentPatient }) {
                     variant="outlined"
                     type="date"
                     fullWidth
-                    value={newPatient.DOB}
+                    //new Date().toISOString().slice(0, 10); JS date to html date
+                    value={new Date(newPatient.DOB).toISOString().slice(0, 10)}
                     onChange={(e) => {
                       e.target.value &&
                         setNewPatient({
