@@ -162,9 +162,20 @@ export default function CalendarDemo() {
           style={{
             height: 600,
           }}
-          eventPropGetter={(event) => {
-            const backgroundColor = event.title === "Milka" ? "orange" : "blue";
-            return { style: { backgroundColor, minHeight: 41 } };
+          eventPropGetter={(e) => {
+            if (e.DepartmentName === "GENERAL") {
+              return { style: { backgroundColor: "#df5286" } };
+            } else if (e.DepartmentName === "NEUROLOGY") {
+              return { style: { backgroundColor: "#1aaa55" } };
+            } else if (e.DepartmentName === "DERMATOLOGY") {
+              return { style: { backgroundColor: "#865fcf" } };
+            } else if (e.DepartmentName === "ORTHOPEDICS") {
+              return { style: { backgroundColor: "#fec200" } };
+            } else if (e.DepartmentName === "DIABETOLOGY") {
+              return { style: { backgroundColor: "#ea7a57" } };
+            } else if (e.DepartmentName === "CARDIOLOGY") {
+              return { style: { backgroundColor: "#00bdae" } };
+            }
           }}
         />
         <FormOfDialog
