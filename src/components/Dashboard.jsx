@@ -33,7 +33,7 @@ const Dashboard = () => {
     <Grid
       bgcolor="#f8f9fa"
       container
-      sx={{ p: { sx: 0, md: 2 } }}
+      sx={{ p: { sx: 0, md: 3 } }}
       justifyContent="space-evenly">
       <Grid item gap={2} xs={11} sm={11} md={7}>
         <Grid item display="flex" mb={3} gap={1} justifyContent="space-between">

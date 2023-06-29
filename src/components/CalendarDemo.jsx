@@ -145,7 +145,7 @@ export default function CalendarDemo() {
   }, [preferences.slot]);
   return (
     <Fragment>
-      <Box sx={{ borderRadius: 3, boxShadow: 3, overflow: "clip" }}>
+      <Box p={1} m={2} sx={{ borderRadius: 3, boxShadow: 3, overflow: "clip" }}>
         <Calendar
           dayLayoutAlgorithm={"no-overlap"}
           defaultDate={defaultDate}
