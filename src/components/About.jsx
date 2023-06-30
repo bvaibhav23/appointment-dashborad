@@ -15,13 +15,13 @@ const About = () => {
         <Typography variant="p" color="GrayText">
           This is a doctor appointment scheduling app build using ReactJS,
           Material UI, React-big-calendar and ChartJs.You can further explore
-          the{" "}
+          the
           <a
             href="https://github.com/bvaibhav23/appointment-dashborad"
-            target="_blank">
-            {" "}
+            target="_blank"
+            rel="noreferrer">
             source code
-          </a>{" "}
+          </a>
           of this application.
         </Typography>
       </Stack>
