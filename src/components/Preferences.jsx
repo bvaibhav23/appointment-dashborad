@@ -22,8 +22,8 @@ const Preferences = () => {
         Preferences
       </Typography>
 
-      <Stack mt={3}>
-        <Stack gap={1}>
+      <Stack gap={2} mt={3}>
+        <Stack gap={0.5}>
           <Typography
             variant="p"
             fontSize="small"
@@ -40,7 +40,7 @@ const Preferences = () => {
             sx={{ width: { md: 400, xs: "80%" } }}
             renderInput={(params) => <TextField {...params} />}></Autocomplete>
         </Stack>
-        <Stack gap={1}>
+        <Stack gap={0.5}>
           <Typography
             variant="p"
             fontSize="small"
@@ -55,7 +55,7 @@ const Preferences = () => {
             sx={{ width: { md: 400, xs: "80%" } }}
             renderInput={(params) => <TextField {...params} />}></Autocomplete>
         </Stack>
-        <Stack gap={1}>
+        <Stack gap={0.5}>
           <Typography
             variant="p"
             fontSize="small"
@@ -70,7 +70,7 @@ const Preferences = () => {
             sx={{ width: { md: 400, xs: "80%" } }}
             renderInput={(params) => <TextField {...params} />}></Autocomplete>
         </Stack>
-        <Stack gap={1}>
+        <Stack gap={0.5}>
           <Typography
             variant="p"
             fontSize="small"
@@ -89,7 +89,7 @@ const Preferences = () => {
             sx={{ width: { md: 400, xs: "80%" } }}
             renderInput={(params) => <TextField {...params} />}></Autocomplete>
         </Stack>
-        <Stack gap={1}>
+        <Stack gap={0.5}>
           <Typography
             variant="p"
             fontSize="small"
@@ -104,7 +104,7 @@ const Preferences = () => {
             sx={{ width: { md: 400, xs: "80%" } }}
             renderInput={(params) => <TextField {...params} />}></Autocomplete>
         </Stack>
-        <Stack gap={1}>
+        <Stack gap={0.5}>
           <Typography
             variant="p"
             fontSize="small"

@@ -28,9 +28,9 @@ export default function DashboardDoctors() {
           overflowY: "scroll",
         }}>
         {currentDoctorsData &&
-          currentDoctorsData.slice(0, 5).map((val) => (
+          currentDoctorsData.slice(0, 5).map((val, i) => (
             <>
-              <ListItem alignItems="flex-start">
+              <ListItem key={i} alignItems="flex-start">
                 <ListItemAvatar>
                   <Avatar alt={val.title} src={val.imgURL} />
                 </ListItemAvatar>
@@ -49,7 +49,7 @@ export default function DashboardDoctors() {
                   }
                 />
               </ListItem>
-              <Divider />
+              <Divider key={i + 100} />
             </>
           ))}
       </List>

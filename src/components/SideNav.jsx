@@ -54,28 +54,12 @@ function ResponsiveDrawer(props) {
 
   const drawer = (
     <div>
-      <Box
-        display="flex"
-        flexDirection="column"
-        m={3}
-        gap={1}
-        alignItems="center">
-        <Box borderRadius={15} boxShadow={3}>
-          <img
-            style={{
-              padding: "1px",
-              borderColor: "navy",
-            }}
-            width="75vh"
-            height="75vh"
-            src={docLogo}
-            alt="doc Logo"
-          />
-        </Box>
+      <Stack justifyContent="center" alignItems="center" gap={1} mt={3}>
+        <img width="75vh" height="75vh" src={docLogo} alt="doc Logo" />
         <Typography
           borderBottom={1}
           borderColor="navy"
-          mb={1}
+          mb={0.5}
           variant="h6"
           fontWeight="bold">
           Jane Doe
@@ -83,7 +67,7 @@ function ResponsiveDrawer(props) {
         <Typography color="GrayText" fontSize={14}>
           Admin
         </Typography>
-      </Box>
+      </Stack>
       <Divider />
       <List sx={{ pl: 0.5, pr: 0.5 }}>
         {sideBarData.map((item) => (

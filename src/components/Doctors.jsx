@@ -35,6 +35,7 @@ const Doctors = () => {
       <Typography
         variant="h6"
         fontWeight="bold"
+        mb={1}
         display="inline-block"
         borderBottom={".2rem solid #7575ff"}>
         DOCTORS LIST

@@ -292,7 +292,7 @@ export const doctorsData = [
     DepartmentId: 3,
     Color: "#865fcf",
     Education: "MBBS, MD (Dermatology)",
-    Designation: "Senior Dermatologist",
+    Designation: "Senior Dermatology",
     Specialization: "Dermatology",
     Experience: "10+ years",
     DutyTiming: "Shift1",
@@ -958,7 +958,7 @@ export const hospitalData = [
     title: "Laura",
     Disease: "Feeling very hungry - even though you are eating",
     DoctorName: "Mollie Cobb",
-    DepartmentName: "DIABETOLOGY",
+    DepartmentName: "Diabetology",
     DepartmentId: 5,
     start: new Date(
       today.getFullYear(),
@@ -983,7 +983,7 @@ export const hospitalData = [
     title: "Richa",
     Disease: "Skin care treatment",
     DoctorName: "Yara Barros",
-    DepartmentName: "DERMATOLOGIST",
+    DepartmentName: "Dermatology",
     DepartmentId: 3,
     start: new Date(
       today.getFullYear(),
@@ -1083,7 +1083,7 @@ export const hospitalData = [
     title: "Milka",
     Disease: "Skin Care Treatment",
     DoctorName: "Mollie Cobb",
-    DepartmentName: "DERMATOLOGIST",
+    DepartmentName: "Dermatology",
     DepartmentId: 3,
     start: new Date(
       today.getFullYear(),
@@ -1258,7 +1258,7 @@ export const hospitalData = [
     title: "Milka",
     Disease: "Feeling very hungry - even though you are eating",
     DoctorName: "Paul Walker",
-    DepartmentName: "DIABETOLOGY",
+    DepartmentName: "Diabetology",
     DepartmentId: 5,
     start: new Date(
       today.getFullYear(),
@@ -1283,7 +1283,7 @@ export const hospitalData = [
     title: "Adams",
     Disease: "Kidney disease",
     DoctorName: "Yara Barros",
-    DepartmentName: "DIABETOLOGY",
+    DepartmentName: "Diabetology",
     DepartmentId: 5,
     start: new Date(
       today.getFullYear(),
@@ -1308,7 +1308,7 @@ export const hospitalData = [
     title: "Janet",
     Disease: "Gastroparesis",
     DoctorName: "Amelia Edwards",
-    DepartmentName: "DIABETOLOGY",
+    DepartmentName: "Diabetology",
     DepartmentId: 5,
     start: new Date(
       today.getFullYear(),
@@ -1333,7 +1333,7 @@ export const hospitalData = [
     title: "Laura",
     Disease: "Sleep apnea",
     DoctorName: "Amelia Edwards",
-    DepartmentName: "DIABETOLOGY",
+    DepartmentName: "Diabetology",
     DepartmentId: 5,
     start: new Date(
       today.getFullYear(),
@@ -1358,7 +1358,7 @@ export const hospitalData = [
     title: "Milka",
     Disease: "Vision problems",
     DoctorName: "Amelia Edwards",
-    DepartmentName: "DIABETOLOGY",
+    DepartmentName: "Diabetology",
     DepartmentId: 5,
     start: new Date(
       today.getFullYear(),
@@ -1383,7 +1383,7 @@ export const hospitalData = [
     title: "Milka",
     Disease: "Feeling very hungry - even though you are eating",
     DoctorName: "Paul Walker",
-    DepartmentName: "DIABETOLOGY",
+    DepartmentName: "Diabetology",
     DepartmentId: 5,
     start: new Date(
       today.getFullYear(),
@@ -1608,7 +1608,7 @@ export const hospitalData = [
     title: "Milka",
     Disease: "Dizziness",
     DoctorName: "Paul Walker",
-    DepartmentName: "DIABETOLOGY",
+    DepartmentName: "Diabetology",
     DepartmentId: 5,
     start: new Date(
       today.getFullYear(),
@@ -1640,7 +1640,7 @@ export const specializationData = [
   { DepartmentId: 2, Id: "neurology", Text: "Neurology", Color: "#33C7E8" },
   { DepartmentId: 3, Id: "dermatology", Text: "Dermatology", Color: "#916DE4" },
   { DepartmentId: 4, Id: "orthopedics", Text: "Orthopedics", Color: "#388CF5" },
-  { DepartmentId: 5, Id: "diabetology", Text: "Diabetology", Color: "#60F238" },
+  { DepartmentId: 5, Id: "Diabetology", Text: "Diabetology", Color: "#60F238" },
   { DepartmentId: 6, Id: "cardiology", Text: "Cardiology", Color: "#F29438" },
 ];
 

@@ -124,7 +124,7 @@ const Patients = () => {
         </Button>
       </Box>
 
-      <TableContainer component={Paper}>
+      <TableContainer sx={{ borderTop: "5px solid #7575ff" }} component={Paper}>
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>

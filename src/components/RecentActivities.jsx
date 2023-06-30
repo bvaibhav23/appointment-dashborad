@@ -11,11 +11,6 @@ export default function RecentActivities() {
   const { recentActivities } = useContext(DataContext);
   return (
     <Box pb={1}>
-      <Stack p={1}>
-        <Typography variant="p" fontWeight="bold">
-          Recent Activities
-        </Typography>
-      </Stack>
       <List
         sx={{
           height: 350,
@@ -27,8 +22,8 @@ export default function RecentActivities() {
           recentActivities
             .reverse()
             .slice(0, 5)
-            .map((val) => (
-              <ListItem alignItems="flex-start">
+            .map((val, i) => (
+              <ListItem key={i} alignItems="flex-start">
                 <ListItemText
                   sx={{ pl: 1, borderLeft: "2px solid red " }}
                   primary=""

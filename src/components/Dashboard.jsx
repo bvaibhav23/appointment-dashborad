@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Grid, Stack, Typography } from "@mui/material";
 import React, { useContext } from "react";
 import EventChart from "./EventChart";
 import DashboardCard from "./DashboardCard";
@@ -33,7 +33,7 @@ const Dashboard = () => {
     <Grid
       bgcolor="#f8f9fa"
       container
-      sx={{ p: { sx: 0, md: 3 } }}
+      sx={{ p: 3 }}
       justifyContent="space-evenly">
       <Grid item gap={2} xs={11} sm={11} md={7}>
         <Grid item display="flex" mb={3} gap={1} justifyContent="space-between">
@@ -46,31 +46,66 @@ const Dashboard = () => {
             value={weeksEvents.length}
           />
         </Grid>
-        <Grid bgcolor="#fff" item mb={3} boxShadow={3}>
-          <Box
-            display="flex"
-            height="10vh"
-            alignItems="center"
+        <Grid
+          bgcolor="#fff"
+          item
+          mb={3}
+          borderRadius={1}
+          overflow={"clip"}
+          boxShadow={3}>
+          <Stack
+            direction="row"
+            justifyContent="space-between"
             p={1}
-            justifyContent="space-between">
+            borderTop="5px solid #7575ff">
             <Typography variant="p" fontWeight="bold">
               Today's Appointments
             </Typography>
             <Link to="/schedule">
               <Typography variant="p">Book appointment</Typography>
             </Link>
-          </Box>
+          </Stack>
+
           <BasicTable todaysEvents={todaysEvents} />
         </Grid>
-        <Grid bgcolor="#fff" item mb={3} boxShadow={3}>
-          <EventChart weeksEvents={weeksEvents} />
+        <Grid
+          bgcolor="#fff"
+          borderRadius={1}
+          overflow="clip"
+          item
+          mb={3}
+          p={1}
+          borderTop="5px solid #7575ff"
+          boxShadow={3}>
+          <Typography variant="p" component="div" fontWeight="bold">
+            Consultations
+          </Typography>
+
+          <EventChart />
         </Grid>
       </Grid>
       <Grid item gap={2} xs={11} sm={11} md={3}>
-        <Grid bgcolor="#fff" borderRadius={2} item mb={3} boxShadow={3}>
+        <Grid
+          bgcolor="#fff"
+          borderRadius={2}
+          item
+          mb={3}
+          boxShadow={3}
+          borderTop="5px solid #7575ff"
+          overflow={"clip"}>
+          <Typography variant="p" component="div" fontWeight="bold" p={1}>
+            Recent Activities
+          </Typography>
+
           <RecentActivities />
         </Grid>
-        <Grid bgcolor="#fff" borderRadius={2} item boxShadow={3}>
+        <Grid
+          bgcolor="#fff"
+          borderRadius={2}
+          item
+          boxShadow={3}
+          borderTop="5px solid #7575ff"
+          overflow={"clip"}>
           <DashboardDoctors />
         </Grid>
       </Grid>

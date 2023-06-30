@@ -145,7 +145,15 @@ export default function CalendarDemo() {
   }, [preferences.slot]);
   return (
     <Fragment>
-      <Box p={1} m={2} sx={{ borderRadius: 3, boxShadow: 3, overflow: "clip" }}>
+      <Box
+        p={1}
+        m={1}
+        sx={{
+          borderTop: "5px solid #7575ff",
+          borderRadius: 3,
+          boxShadow: 3,
+          overflow: "clip",
+        }}>
         <Calendar
           dayLayoutAlgorithm={"no-overlap"}
           defaultDate={defaultDate}
@@ -176,7 +184,7 @@ export default function CalendarDemo() {
               return { style: { backgroundColor: "#865fcf" } };
             } else if (e.DepartmentName === "Orthopedics") {
               return { style: { backgroundColor: "#fec200" } };
-            } else if (e.DepartmentName === "Dialectology") {
+            } else if (e.DepartmentName === "Diabetology") {
               return { style: { backgroundColor: "#ea7a57" } };
             } else if (e.DepartmentName === "Cardiology") {
               return { style: { backgroundColor: "#00bdae" } };
