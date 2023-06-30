@@ -33,10 +33,15 @@ const Dashboard = () => {
     <Grid
       bgcolor="#f8f9fa"
       container
-      sx={{ p: 3 }}
+      sx={{ p: 4 }}
       justifyContent="space-evenly">
-      <Grid item gap={2} xs={11} sm={11} md={7}>
-        <Grid item display="flex" mb={3} gap={1} justifyContent="space-between">
+      <Grid item xs={11} sm={11} md={7}>
+        <Grid
+          item
+          display="flex"
+          sx={{ mb: { xs: 3, md: 5 } }}
+          gap={1}
+          justifyContent="space-between">
           <DashboardCard
             title="Total Appointment- Today"
             value={todaysEvents.length}
@@ -49,7 +54,7 @@ const Dashboard = () => {
         <Grid
           bgcolor="#fff"
           item
-          mb={3}
+          sx={{ mb: { xs: 3, md: 5 } }}
           borderRadius={1}
           overflow={"clip"}
           boxShadow={3}>
@@ -73,7 +78,7 @@ const Dashboard = () => {
           borderRadius={1}
           overflow="clip"
           item
-          mb={3}
+          sx={{ mb: { xs: 3, md: 0 } }}
           p={1}
           borderTop="5px solid #7575ff"
           boxShadow={3}>
@@ -84,12 +89,12 @@ const Dashboard = () => {
           <EventChart />
         </Grid>
       </Grid>
-      <Grid item gap={2} xs={11} sm={11} md={3}>
+      <Grid item xs={11} sm={11} md={3}>
         <Grid
           bgcolor="#fff"
           borderRadius={2}
           item
-          mb={3}
+          sx={{ mb: { xs: 3, md: 5 } }}
           boxShadow={3}
           borderTop="5px solid #7575ff"
           overflow={"clip"}>

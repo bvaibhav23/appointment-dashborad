@@ -26,11 +26,21 @@ const options = {
   responsive: true,
   scales: {
     y: {
+      title: {
+        display: true,
+        text: "Number of Patients",
+      },
       beginAtZero: true,
       ticks: {
         stepSize: 1,
       },
       suggestedMax: 5,
+    },
+    x: {
+      title: {
+        display: true,
+        text: "Days of week",
+      },
     },
   },
   plugins: {

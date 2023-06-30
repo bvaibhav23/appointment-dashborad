@@ -22,7 +22,7 @@ const Scheduler = () => {
     <Grid
       bgcolor="#f8f9fa"
       container
-      sx={{ p: 3 }}
+      sx={{ mt: 1 }}
       justifyContent="space-evenly">
       <Grid
         sx={{ display: { xs: "block", md: "none" } }}

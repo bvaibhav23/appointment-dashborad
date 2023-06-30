@@ -715,8 +715,7 @@ export const patientsData = [
     DepartmentName: "General Medicine",
     BloodGroup: "B+",
     Gender: "Male",
-    Symptoms:
-      "Physical aches or pain, Memory difficulties or personality change",
+    Symptoms: "Physical aches or pain, Memory difficulties",
   },
   {
     Id: 5,
@@ -900,7 +899,7 @@ export const hospitalData = [
     DepartmentId: 4,
     DoctorId: 5,
     PatientId: 2,
-    Symptoms: "Swelling or bruising over a bone, Pain in the injured area",
+    Symptoms: "Swelling or bruising over a bone",
   },
   {
     Id: 1001,
@@ -925,8 +924,7 @@ export const hospitalData = [
     DepartmentId: 1,
     DoctorId: 3,
     PatientId: 4,
-    Symptoms:
-      "Physical aches or pain, Memory difficulties or personality changes",
+    Symptoms: "Physical aches or pain, Memory difficulties",
   },
   {
     Id: 1002,
@@ -951,7 +949,7 @@ export const hospitalData = [
     ),
     DoctorId: 4,
     PatientId: 5,
-    Symptoms: "outbreak of swollen, pale red bumps or plaques",
+    Symptoms: "outbreak of swollen, pale red bumps",
   },
   {
     Id: 1003,
@@ -976,7 +974,7 @@ export const hospitalData = [
     ),
     DoctorId: 6,
     PatientId: 1,
-    Symptoms: "Urinating often, Extreme fatigue, Blurry vision",
+    Symptoms: "Urinating often, Extreme fatigue",
   },
   {
     Id: 1004,
@@ -1001,7 +999,7 @@ export const hospitalData = [
     ),
     DoctorId: 4,
     PatientId: 2,
-    Symptoms: "Scaly or rough skin, Peeling skin, open sores or lesions",
+    Symptoms: "Scaly or rough skin, Peeling skin",
   },
   {
     Id: 1005,
@@ -1026,7 +1024,7 @@ export const hospitalData = [
     ),
     DoctorId: 1,
     PatientId: 3,
-    Symptoms: "Decreased energy, Chronic fatigue, Difficulty concentrating",
+    Symptoms: "Decreased energy, Chronic fatigue",
   },
   {
     Id: 1006,
@@ -1051,7 +1049,7 @@ export const hospitalData = [
     ),
     DoctorId: 5,
     PatientId: 6,
-    Symptoms: "Swelling, warmth, or redness in the joint",
+    Symptoms: "Swelling, warmth, or redness",
   },
   {
     Id: 1007,
@@ -1076,7 +1074,7 @@ export const hospitalData = [
     ),
     DoctorId: 7,
     PatientId: 2,
-    Symptoms: "Shortness of breath, Swollen feet or ankles",
+    Symptoms: "Shortness of breath, Swollen feet",
   },
   {
     Id: 1008,
@@ -1101,7 +1099,7 @@ export const hospitalData = [
     ),
     DoctorId: 4,
     PatientId: 2,
-    Symptoms: "a rash, which might be painful or itchy",
+    Symptoms: "a rash, which might be painful",
   },
   {
     Id: 1009,
@@ -1151,7 +1149,7 @@ export const hospitalData = [
     ),
     DoctorId: 5,
     PatientId: 3,
-    Symptoms: "Recurring or constant joint pain or tenderness",
+    Symptoms: "Recurring or constant joint pain",
   },
   {
     Id: 1011,
@@ -1176,7 +1174,7 @@ export const hospitalData = [
     ),
     DoctorId: 1,
     PatientId: 3,
-    Symptoms: "a pulsating feeling in the head, sensitivity to sound and light",
+    Symptoms: "a pulsating feeling in the head",
   },
   {
     Id: 1012,
@@ -1201,7 +1199,7 @@ export const hospitalData = [
     ),
     DoctorId: 2,
     PatientId: 4,
-    Symptoms: "Partial or complete paralysis, Muscle weakness",
+    Symptoms: "Partial or complete paralysis",
   },
   {
     Id: 1013,
@@ -1251,12 +1249,12 @@ export const hospitalData = [
     DepartmentId: 1,
     DoctorId: 3,
     PatientId: 3,
-    Symptoms: "Frequent squinting, Eye fatigue or strain",
+    Symptoms: "Frequent squinting, Eye fatigue",
   },
   {
     Id: 1015,
     title: "Milka",
-    Disease: "Feeling very hungry - even though you are eating",
+    Disease: "Feeling hungry after eating",
     DoctorName: "Paul Walker",
     DepartmentName: "Diabetology",
     DepartmentId: 5,
@@ -1276,7 +1274,7 @@ export const hospitalData = [
     ),
     DoctorId: 6,
     PatientId: 2,
-    Symptoms: "Urinating often, Extreme fatigue, Blurry vision",
+    Symptoms: "Urinating often, Extreme fatigue",
   },
   {
     Id: 1016,
@@ -1326,7 +1324,7 @@ export const hospitalData = [
     ),
     DoctorId: 6,
     PatientId: 4,
-    Symptoms: "A feeling of fullness after eating just a few bites",
+    Symptoms: "Feeling cold",
   },
   {
     Id: 1018,
@@ -1381,7 +1379,7 @@ export const hospitalData = [
   {
     Id: 1020,
     title: "Milka",
-    Disease: "Feeling very hungry - even though you are eating",
+    Disease: "Feeling hungry after eating",
     DoctorName: "Paul Walker",
     DepartmentName: "Diabetology",
     DepartmentId: 5,
@@ -1401,7 +1399,7 @@ export const hospitalData = [
     ),
     DoctorId: 6,
     PatientId: 2,
-    Symptoms: "Urinating often, Extreme fatigue, Blurry vision",
+    Symptoms: "Urinating often, Extreme fatigue",
   },
   {
     Id: 1021,
@@ -1426,7 +1424,7 @@ export const hospitalData = [
     DepartmentId: 4,
     DoctorId: 5,
     PatientId: 3,
-    Symptoms: "Swelling or bruising over a bone, Pain in the injured area",
+    Symptoms: "Swelling or bruising over a bone",
   },
   {
     Id: 1022,
@@ -1451,7 +1449,7 @@ export const hospitalData = [
     DepartmentId: 4,
     DoctorId: 5,
     PatientId: 5,
-    Symptoms: "Deformity, such as a bent arm or wrist",
+    Symptoms: "Deformity, such as a bent arm",
   },
   {
     Id: 1023,
@@ -1526,7 +1524,7 @@ export const hospitalData = [
     ),
     DoctorId: 7,
     PatientId: 4,
-    Symptoms: "Nasal congestion, runny nose, itchy or watery eyes",
+    Symptoms: "Nasal congestion, runny nose",
   },
   {
     Id: 1025,
