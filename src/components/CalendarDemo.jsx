@@ -103,6 +103,7 @@ export default function CalendarDemo() {
             title: "Updated Appointment",
             Message:
               eventData &&
+              eventInfo &&
               `${eventData.title} for consultation on ${
                 eventInfo[0] && eventInfo[0].toLocaleString()
               } with ${eventData.DoctorName}`,
