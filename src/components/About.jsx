@@ -20,7 +20,8 @@ const About = () => {
             href="https://github.com/bvaibhav23/appointment-dashborad"
             target="_blank"
             rel="noreferrer">
-            source code
+            {" "}
+            source code{" "}
           </a>
           of this application.
         </Typography>
