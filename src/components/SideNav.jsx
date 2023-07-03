@@ -54,7 +54,7 @@ function ResponsiveDrawer(props) {
 
   const drawer = (
     <div>
-      <Stack justifyContent="center" alignItems="center" gap={1} mt={3}>
+      <Stack justifyContent="center" alignItems="center" gap={1} mb={2} mt={3}>
         <img width="75vh" height="75vh" src={docLogo} alt="doc Logo" />
         <Typography
           borderBottom={1}

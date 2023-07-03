@@ -231,7 +231,7 @@ function NestedModal({
   const [currApp, setCurrApp] = useState();
   useEffect(() => {
     setCurrApp(events.filter((eve) => eve.title === currentPatient.title));
-  }, [currentPatient]);
+  }, [currentPatient, events]);
   console.log(currApp);
   const handleClose = () => {
     setOpen(false);
