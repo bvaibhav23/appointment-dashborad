@@ -81,7 +81,7 @@ const Doctors = () => {
           <Card
             key={info.Id}
             sx={{
-              width: { xs: "90%", md: "45%" },
+              width: { xs: "100%", md: "45%" },
               ":hover": { boxShadow: " .1rem .1rem 2rem .1rem #7575ff" },
             }}
             onClick={() => navTo(`/doctor/${info.Id}`)}>
@@ -106,14 +106,14 @@ const Doctors = () => {
                       <Typography variant="p" fontSize={12} color={"GrayText"}>
                         Designation
                       </Typography>
-                      <Typography>{info.Designation}</Typography>
+                      <Typography noWrap>{info.Designation}</Typography>
                     </Stack>
                     <Divider orientation="vertical" />
                     <Stack>
                       <Typography variant="p" fontSize={12} color={"GrayText"}>
                         Experience
                       </Typography>
-                      <Typography>{info.Experience}</Typography>
+                      <Typography noWrap> {info.Experience}</Typography>
                     </Stack>
                   </Stack>
                 </Stack>
