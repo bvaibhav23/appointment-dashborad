@@ -22,38 +22,6 @@ ChartJS.register(
   Legend
 );
 
-const options = {
-  responsive: true,
-  scales: {
-    y: {
-      title: {
-        display: true,
-        text: "Number of Patients",
-      },
-      beginAtZero: true,
-      ticks: {
-        stepSize: 1,
-      },
-      suggestedMax: 5,
-    },
-    x: {
-      title: {
-        display: true,
-        text: "Days of week",
-      },
-    },
-  },
-  plugins: {
-    legend: {
-      position: "top",
-    },
-    title: {
-      display: false,
-      text: "Consultation",
-    },
-  },
-};
-
 export default function EventChart() {
   const { events } = useContext(DataContext);
 
@@ -96,7 +64,10 @@ export default function EventChart() {
   getDataOfWeek();
 
   const labels = datesOfWeek.map((ele) => ele.toDateString().slice(4, 10));
-  console.log(labels);
+  const tickColor = labels.map((ele) =>
+    ele === new Date().toDateString().slice(4, 10) ? "red" : "blue"
+  );
+  // console.log(labels);
   const data = {
     labels,
     datasets: [
@@ -106,6 +77,8 @@ export default function EventChart() {
         borderColor: "#ea7a57",
         backgroundColor: "#ea7a57",
         tension: 0.4,
+        borderWidth: 1,
+        pointStyle: false,
       },
       {
         label: "Orthopedics",
@@ -113,6 +86,8 @@ export default function EventChart() {
         borderColor: "#fec200",
         backgroundColor: "#fec200",
         tension: 0.4,
+        borderWidth: 1,
+        pointStyle: false,
       },
       {
         label: "Cardiology",
@@ -120,8 +95,45 @@ export default function EventChart() {
         borderColor: "#00bdae",
         backgroundColor: "#00bdae",
         tension: 0.4,
+        borderWidth: 1,
+        pointStyle: false,
       },
     ],
+  };
+
+  const options = {
+    responsive: true,
+    scales: {
+      y: {
+        title: {
+          display: true,
+          text: "Number of Patients",
+        },
+        beginAtZero: true,
+        ticks: {
+          stepSize: 1,
+        },
+        suggestedMax: 4,
+      },
+      x: {
+        title: {
+          display: true,
+          text: "Days of week",
+        },
+        ticks: {
+          color: tickColor,
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: false,
+        text: "Consultation",
+      },
+    },
   };
 
   return <Line options={options} data={data} />;

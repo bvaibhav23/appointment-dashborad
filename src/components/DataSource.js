@@ -920,7 +920,7 @@ export const hospitalData = [
     ),
     Disease: "Biological Problems",
     DoctorName: "Nembo Lukeni",
-    DepartmentName: "General Medicine",
+    DepartmentName: "Diabetology",
     DepartmentId: 1,
     DoctorId: 3,
     PatientId: 4,
@@ -960,14 +960,14 @@ export const hospitalData = [
     DepartmentId: 5,
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
+      today.getMonth(),
       today.getDate() + 10,
       10,
       0
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
+      today.getMonth(),
       today.getDate() + 10,
       11,
       0
@@ -985,15 +985,15 @@ export const hospitalData = [
     DepartmentId: 3,
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 13,
+      today.getMonth(),
+      today.getDate() - 3,
       10,
       0
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 13,
+      today.getMonth(),
+      today.getDate() - 3,
       11,
       0
     ),
@@ -1060,15 +1060,15 @@ export const hospitalData = [
     DepartmentId: 6,
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 17,
+      today.getMonth(),
+      today.getDate() - 7,
       11,
       0
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 17,
+      today.getMonth(),
+      today.getDate() - 7,
       11,
       30
     ),
@@ -1110,14 +1110,14 @@ export const hospitalData = [
     DepartmentId: 1,
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
+      today.getMonth(),
       today.getDate() + 12,
       14,
       0
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
+      today.getMonth(),
       today.getDate() + 12,
       16,
       0
@@ -1135,14 +1135,14 @@ export const hospitalData = [
     DepartmentId: 4,
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
+      today.getMonth(),
       today.getDate() + 11,
       11,
       0
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
+      today.getMonth(),
       today.getDate() + 11,
       13,
       0
@@ -1160,15 +1160,15 @@ export const hospitalData = [
     DepartmentId: 1,
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 19,
+      today.getMonth(),
+      today.getDate() + 9,
       11,
       0
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 19,
+      today.getMonth(),
+      today.getDate() + 9,
       12,
       0
     ),
@@ -1185,14 +1185,14 @@ export const hospitalData = [
     DepartmentId: 2,
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
+      today.getMonth(),
       today.getDate() + 11,
       16,
       30
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
+      today.getMonth(),
       today.getDate() + 11,
       17,
       30
@@ -1206,14 +1206,14 @@ export const hospitalData = [
     title: "Laura",
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
+      today.getMonth(),
       today.getDate() + 15,
       13,
       0
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
+      today.getMonth(),
       today.getDate() + 15,
       14,
       0
@@ -1231,15 +1231,15 @@ export const hospitalData = [
     title: "Adams",
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 12,
+      today.getMonth(),
+      today.getDate() - 6,
       16,
       0
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 12,
+      today.getMonth(),
+      today.getDate() - 6,
       17,
       0
     ),
@@ -1260,15 +1260,15 @@ export const hospitalData = [
     DepartmentId: 5,
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 26,
+      today.getMonth(),
+      today.getDate() - 4,
       12,
       0
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 26,
+      today.getMonth(),
+      today.getDate() - 4,
       13,
       0
     ),
@@ -1285,15 +1285,15 @@ export const hospitalData = [
     DepartmentId: 5,
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 26,
+      today.getMonth(),
+      today.getDate() + 6,
       18,
       0
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 26,
+      today.getMonth(),
+      today.getDate() + 6,
       18,
       30
     ),
@@ -1310,15 +1310,15 @@ export const hospitalData = [
     DepartmentId: 5,
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 24,
+      today.getMonth(),
+      today.getDate() + 2,
       14,
       0
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 24,
+      today.getMonth(),
+      today.getDate() + 2,
       14,
       30
     ),
@@ -1335,15 +1335,15 @@ export const hospitalData = [
     DepartmentId: 5,
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 24,
+      today.getMonth(),
+      today.getDate() + 4,
       12,
       0
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 24,
+      today.getMonth(),
+      today.getDate() + 4,
       13,
       0
     ),
@@ -1360,15 +1360,15 @@ export const hospitalData = [
     DepartmentId: 5,
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 22,
+      today.getMonth(),
+      today.getDate() - 2,
       10,
       0
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 22,
+      today.getMonth(),
+      today.getDate() - 2,
       11,
       0
     ),
@@ -1385,15 +1385,15 @@ export const hospitalData = [
     DepartmentId: 5,
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 22,
+      today.getMonth(),
+      today.getDate() + 2,
       12,
       0
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 22,
+      today.getMonth(),
+      today.getDate() + 2,
       13,
       0
     ),
@@ -1406,15 +1406,15 @@ export const hospitalData = [
     title: "Adams",
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 26,
+      today.getMonth(),
+      today.getDate() + 6,
       10,
       0
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 26,
+      today.getMonth(),
+      today.getDate() + 6,
       11,
       0
     ),
@@ -1431,15 +1431,15 @@ export const hospitalData = [
     title: "Mercy",
     start: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 20,
+      today.getMonth(),
+      today.getDate(),
       15,
       0
     ),
     end: new Date(
       today.getFullYear(),
-      today.getMonth() - 1,
-      today.getDate() + 20,
+      today.getMonth(),
+      today.getDate(),
       15,
       30
     ),
@@ -1611,14 +1611,14 @@ export const hospitalData = [
     start: new Date(
       today.getFullYear(),
       today.getMonth(),
-      today.getDate() - 2,
+      today.getDate() - 1,
       19,
       0
     ),
     end: new Date(
       today.getFullYear(),
       today.getMonth(),
-      today.getDate() - 2,
+      today.getDate() - 1,
       19,
       30
     ),
@@ -1668,7 +1668,7 @@ export const activityData = [
   {
     title: "Added New Appointment",
     Message:
-      "Laura for General Checkup on 7th September, today.getFullYear() @58.30 AM with Dr.Molli Cobb",
+      "Laura for General Checkup on 7/3/2023, 4:00:00 PM with Dr.Molli Cobb",
     Time: "5 mins ago",
     Type: "appointment",
     ActivityTime: new Date(today.getFullYear(), 5, 8, 11, 0),
@@ -1683,7 +1683,7 @@ export const activityData = [
   {
     title: "Added New Appointment",
     Message:
-      "Joseph for consultation on 7th December, today.getFullYear() @511.10 AM with Dr.Molli Cobb",
+      "Joseph for consultation on 7/3/2023, 4:00:00 PM with Dr.Molli Cobb",
     Time: "5 mins ago",
     Type: "appointment",
     ActivityTime: new Date(today.getFullYear(), 5, 11, 11, 0),

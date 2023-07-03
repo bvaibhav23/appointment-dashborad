@@ -14,6 +14,8 @@ import {
   Typography,
   Modal,
   Divider,
+  ListItem,
+  ListItemText,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
@@ -225,6 +227,12 @@ function NestedModal({
   setOpenForm,
   // addPatient,
 }) {
+  const { events } = useContext(DataContext);
+  const [currApp, setCurrApp] = useState();
+  useEffect(() => {
+    setCurrApp(events.filter((eve) => eve.title === currentPatient.title));
+  }, [currentPatient]);
+  console.log(currApp);
   const handleClose = () => {
     setOpen(false);
   };
@@ -241,62 +249,126 @@ function NestedModal({
             <Typography p={1} variant="h6" borderBottom={1}>
               Patient Details
             </Typography>
-            <Stack direction="row">
-              <Stack m={2} gap={3}>
-                <Typography variant="p" fontSize="small" fontWeight="bold">
-                  Patient Id
-                </Typography>
-                <Typography variant="p" fontSize="small" fontWeight="bold">
-                  Patient Name
-                </Typography>
-                <Typography variant="p" fontSize="small" fontWeight="bold">
-                  Gender
-                </Typography>
-                <Typography variant="p" fontSize="small" fontWeight="bold">
-                  DOB
-                </Typography>
-                <Typography variant="p" fontSize="small" fontWeight="bold">
-                  Blood Group
-                </Typography>
-                <Typography variant="p" fontSize="small" fontWeight="bold">
-                  Mobile Number
-                </Typography>
-                <Typography variant="p" fontSize="small" fontWeight="bold">
-                  Email
-                </Typography>
-                <Typography variant="p" fontSize="small" fontWeight="bold">
-                  Symptoms
-                </Typography>
+            <Box sx={{ height: 400, overflowY: "scroll" }}>
+              <Stack direction="row">
+                <Stack m={2} gap={3}>
+                  <Typography
+                    variant="p"
+                    fontSize="small"
+                    fontWeight="bold"
+                    noWrap>
+                    Patient Id
+                  </Typography>
+                  <Typography
+                    variant="p"
+                    fontSize="small"
+                    fontWeight="bold"
+                    noWrap>
+                    Patient Name
+                  </Typography>
+                  <Typography
+                    variant="p"
+                    fontSize="small"
+                    fontWeight="bold"
+                    noWrap>
+                    Gender
+                  </Typography>
+                  <Typography
+                    variant="p"
+                    fontSize="small"
+                    fontWeight="bold"
+                    noWrap>
+                    DOB
+                  </Typography>
+                  <Typography
+                    variant="p"
+                    fontSize="small"
+                    fontWeight="bold"
+                    noWrap>
+                    Blood Group
+                  </Typography>
+                  <Typography
+                    variant="p"
+                    fontSize="small"
+                    fontWeight="bold"
+                    noWrap>
+                    Mobile Number
+                  </Typography>
+                  <Typography
+                    variant="p"
+                    fontSize="small"
+                    fontWeight="bold"
+                    noWrap>
+                    Email
+                  </Typography>
+                  <Typography
+                    variant="p"
+                    fontSize="small"
+                    fontWeight="bold"
+                    noWrap>
+                    Symptoms
+                  </Typography>
+                </Stack>
+                <Stack m={2} gap={3}>
+                  <Typography variant="p" fontSize="small">
+                    {currentPatient.Id}
+                  </Typography>
+                  <Typography variant="p" fontSize="small">
+                    {currentPatient.title}
+                  </Typography>
+                  <Typography variant="p" fontSize="small">
+                    {currentPatient.Gender}
+                  </Typography>
+                  <Typography variant="p" fontSize="small">
+                    {currentPatient.DOB &&
+                      `${currentPatient.DOB.getDate()}/${currentPatient.DOB.getMonth()}/${currentPatient.DOB.getFullYear()}`}
+                  </Typography>
+                  <Typography variant="p" fontSize="small">
+                    {currentPatient.BloodGroup}
+                  </Typography>
+                  <Typography variant="p" fontSize="small">
+                    {currentPatient.Mobile}
+                  </Typography>
+                  <Typography variant="p" fontSize="small">
+                    {currentPatient.Email}
+                  </Typography>
+                  <Typography variant="p" fontSize="small">
+                    {currentPatient.Symptoms}
+                  </Typography>
+                </Stack>
               </Stack>
-              <Stack m={2} gap={3}>
-                <Typography variant="p" fontSize="small">
-                  {currentPatient.Id}
-                </Typography>
-                <Typography variant="p" fontSize="small">
-                  {currentPatient.title}
-                </Typography>
-                <Typography variant="p" fontSize="small">
-                  {currentPatient.Gender}
-                </Typography>
-                <Typography variant="p" fontSize="small">
-                  {currentPatient.DOB &&
-                    `${currentPatient.DOB.getDate()}/${currentPatient.DOB.getMonth()}/${currentPatient.DOB.getFullYear()}`}
-                </Typography>
-                <Typography variant="p" fontSize="small">
-                  {currentPatient.BloodGroup}
-                </Typography>
-                <Typography variant="p" fontSize="small">
-                  {currentPatient.Mobile}
-                </Typography>
-                <Typography variant="p" fontSize="small">
-                  {currentPatient.Email}
-                </Typography>
-
-                <Typography variant="p" fontSize="small">
-                  {currentPatient.Symptoms}
-                </Typography>
+              <Typography
+                ml={2}
+                color="#7575ff"
+                fontWeight="bold"
+                fontSize={12}>
+                Appointment History
+              </Typography>
+              <Stack>
+                {events
+                  .filter((eve) => eve.title === currentPatient.title)
+                  .map((ele) => (
+                    <ListItem key={ele.id} alignItems="flex-start">
+                      <ListItemText
+                        sx={{ pl: 1, borderLeft: "2px solid red " }}
+                        primary=""
+                        secondary={
+                          <React.Fragment>
+                            <Typography
+                              variant="p"
+                              fontSize="small"
+                              color="text.primary">
+                              {`${
+                                ele.start && ele.start.toString().slice(4, 15)
+                              } Appointment with ${ele.DoctorName}`}
+                            </Typography>
+                          </React.Fragment>
+                        }
+                      />
+                    </ListItem>
+                  ))}
               </Stack>
-            </Stack>
+            </Box>
             <Stack direction="row" gap={1} justifyContent="end" pr={2}>
               <Button
                 onClick={() => handleDelete(currentPatient.Id)}

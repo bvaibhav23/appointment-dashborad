@@ -76,7 +76,7 @@ const DoctorsInfo = () => {
             display: "flex",
             flexWrap: "wrap",
             mt: 3,
-            justifyContent: "space-around",
+            justifyContent: "space-evenly",
           }}>
           <Stack direction="row" gap={3}>
             <img
@@ -153,7 +153,7 @@ const DoctorsInfo = () => {
               />
             </Stack>
             {doctorData.WorkDays && (
-              <Stack direction="row" gap={1}>
+              <Stack direction="row" gap={2}>
                 <Stack gap={1}>
                   {doctorData.WorkDays.map((val, i) => (
                     <Typography key={i} variant="p" fontSize={13}>

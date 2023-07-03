@@ -114,10 +114,10 @@ export default function CalendarDemo() {
       }
     }
     // new Date().
-    // console.log(currentEvent, eventData);
 
     setEventData({ title: "" });
   };
+  console.log("events", events);
 
   const handleSelectEvent = useCallback(
     (event) => {
