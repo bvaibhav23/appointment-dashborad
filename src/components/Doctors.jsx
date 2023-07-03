@@ -106,14 +106,19 @@ const Doctors = () => {
                       <Typography variant="p" fontSize={12} color={"GrayText"}>
                         Designation
                       </Typography>
-                      <Typography noWrap>{info.Designation}</Typography>
+                      <Typography noWrap fontSize={14}>
+                        {info.Designation}
+                      </Typography>
                     </Stack>
                     <Divider orientation="vertical" />
                     <Stack>
                       <Typography variant="p" fontSize={12} color={"GrayText"}>
                         Experience
                       </Typography>
-                      <Typography noWrap> {info.Experience}</Typography>
+                      <Typography fontSize={14} noWrap>
+                        {" "}
+                        {info.Experience}
+                      </Typography>
                     </Stack>
                   </Stack>
                 </Stack>
