@@ -1,7 +1,6 @@
 import { Autocomplete, Box, Stack, TextField, Typography } from "@mui/material";
 import React, { useContext } from "react";
 import {
-  colorCategory,
   dayOfWeekList,
   endHours,
   startHours,
@@ -38,7 +37,9 @@ const Preferences = () => {
             onChange={(e, v) => setPreferences({ ...preferences, view: v })}
             size="small"
             sx={{ width: { md: 400, xs: "80%" } }}
-            renderInput={(params) => <TextField {...params} />}></Autocomplete>
+            renderInput={(params) => (
+              <TextField sx={{ bgcolor: "#fff" }} {...params} />
+            )}></Autocomplete>
         </Stack>
         <Stack gap={0.5}>
           <Typography
@@ -57,7 +58,9 @@ const Preferences = () => {
             }
             size="small"
             sx={{ width: { md: 400, xs: "80%" } }}
-            renderInput={(params) => <TextField {...params} />}></Autocomplete>
+            renderInput={(params) => (
+              <TextField sx={{ bgcolor: "#fff" }} {...params} />
+            )}></Autocomplete>
         </Stack>
         <Stack gap={0.5}>
           <Typography
@@ -76,7 +79,9 @@ const Preferences = () => {
             }
             size="small"
             sx={{ width: { md: 400, xs: "80%" } }}
-            renderInput={(params) => <TextField {...params} />}></Autocomplete>
+            renderInput={(params) => (
+              <TextField sx={{ bgcolor: "#fff" }} {...params} />
+            )}></Autocomplete>
         </Stack>
         <Stack gap={0.5}>
           <Typography
@@ -95,9 +100,11 @@ const Preferences = () => {
             }}
             size="small"
             sx={{ width: { md: 400, xs: "80%" } }}
-            renderInput={(params) => <TextField {...params} />}></Autocomplete>
+            renderInput={(params) => (
+              <TextField sx={{ bgcolor: "#fff" }} {...params} />
+            )}></Autocomplete>
         </Stack>
-        <Stack gap={0.5}>
+        {/* <Stack gap={0.5}>
           <Typography
             variant="p"
             fontSize="small"
@@ -110,8 +117,9 @@ const Preferences = () => {
             options={colorCategory.map((v) => v.Text)}
             size="small"
             sx={{ width: { md: 400, xs: "80%" } }}
-            renderInput={(params) => <TextField {...params} />}></Autocomplete>
-        </Stack>
+            renderInput={(params) => <TextField sx={{    bgcolor: "#fff",
+      }} {...params} />}></Autocomplete>
+        </Stack> */}
         <Stack gap={0.5}>
           <Typography
             variant="p"
@@ -129,7 +137,9 @@ const Preferences = () => {
               setPreferences({ ...preferences, weekStart: val })
             }
             sx={{ width: { md: 400, xs: "80%" } }}
-            renderInput={(params) => <TextField {...params} />}></Autocomplete>
+            renderInput={(params) => (
+              <TextField sx={{ bgcolor: "#fff" }} {...params} />
+            )}></Autocomplete>
         </Stack>
       </Stack>
     </Box>

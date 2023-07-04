@@ -50,7 +50,7 @@ const Doctors = () => {
             setSpecialty(val);
           }}
           size="small"
-          sx={{ width: "30vh" }}
+          sx={{ width: "30vh", bgcolor: "#fff" }}
           renderInput={(params) => (
             <TextField {...params} placeholder="Select a specialization" />
           )}

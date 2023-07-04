@@ -178,6 +178,7 @@ export default function CalendarDemo() {
           borderRadius: 3,
           boxShadow: 3,
           overflow: "clip",
+          bgcolor: "#fff",
         }}>
         <Calendar
           dayLayoutAlgorithm={"no-overlap"}

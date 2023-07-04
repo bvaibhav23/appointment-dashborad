@@ -88,6 +88,7 @@ const Patients = () => {
       </Typography>
       <Box display="flex" mt={1} mb={3} justifyContent="end">
         <Stack
+          sx={{ bgcolor: "#fff" }}
           direction="row"
           pl={1}
           alignItems="center"

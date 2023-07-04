@@ -76,6 +76,7 @@ const FilterForm = ({ doctor, handleChange, currentDoctorsData }) => {
         value={doctor}
         size="small"
         variant="outlined"
+        sx={{ bgcolor: "#fff" }}
         placeholder="Choose Specialist"
         onChange={(e) => handleChange(e)}>
         {currentDoctorsData.map((doc) => (
