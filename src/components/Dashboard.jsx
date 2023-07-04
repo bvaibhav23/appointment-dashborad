@@ -30,11 +30,7 @@ const Dashboard = () => {
   // console.log(todaysEvents);
   // console.log("Week", weeksEvents);
   return (
-    <Grid
-      bgcolor="#f8f9fa"
-      container
-      sx={{ p: 4 }}
-      justifyContent="space-evenly">
+    <Grid container sx={{ p: 4 }} justifyContent="space-evenly">
       <Grid item xs={11} sm={11} md={7}>
         <Grid
           item
