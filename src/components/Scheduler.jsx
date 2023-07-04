@@ -68,7 +68,9 @@ export default Scheduler;
 const FilterForm = ({ doctor, handleChange, currentDoctorsData }) => {
   return (
     <FormControl sx={{ m: 1 }} fullWidth>
-      <Typography color={"GrayText"}>Choose Specialist </Typography>
+      <Typography fontSize={14} color={"GrayText"}>
+        Choose Specialist{" "}
+      </Typography>
       <Select
         id="demo-simple-select"
         value={doctor}

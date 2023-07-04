@@ -16,6 +16,9 @@ function App() {
   const [preferences, setPreferences] = useState({
     view: "Weekly",
     slot: "30 mins",
+    weekStart: "Sunday",
+    dayStart: "8:00 AM",
+    dayEnd: "4:00 PM",
   });
   const [recentActivities, setRecentActivities] = useState(activityData);
   return (

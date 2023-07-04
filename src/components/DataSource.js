@@ -1705,7 +1705,7 @@ export const startHours = [
   { Value: "09:00", Text: "9:00 AM" },
   { Value: "10:00", Text: "10:00 AM" },
   { Value: "11:00", Text: "11:00 AM" },
-  { Value: "12:00", Text: "12:00 AM" },
+  { Value: "12:00", Text: "12:00 PM" },
 ];
 
 export const endHours = [

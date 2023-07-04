@@ -51,6 +51,10 @@ const Preferences = () => {
           <Autocomplete
             disablePortal
             options={startHours.map((v) => v.Text)}
+            value={preferences.dayStart}
+            onChange={(e, val) =>
+              setPreferences({ ...preferences, dayStart: val })
+            }
             size="small"
             sx={{ width: { md: 400, xs: "80%" } }}
             renderInput={(params) => <TextField {...params} />}></Autocomplete>
@@ -66,6 +70,10 @@ const Preferences = () => {
           <Autocomplete
             disablePortal
             options={endHours.map((v) => v.Text)}
+            value={preferences.dayEnd}
+            onChange={(e, val) =>
+              setPreferences({ ...preferences, dayEnd: val })
+            }
             size="small"
             sx={{ width: { md: 400, xs: "80%" } }}
             renderInput={(params) => <TextField {...params} />}></Autocomplete>
@@ -116,6 +124,10 @@ const Preferences = () => {
             disablePortal
             options={dayOfWeekList.map((v) => v.Text)}
             size="small"
+            value={preferences.weekStart}
+            onChange={(e, val) =>
+              setPreferences({ ...preferences, weekStart: val })
+            }
             sx={{ width: { md: 400, xs: "80%" } }}
             renderInput={(params) => <TextField {...params} />}></Autocomplete>
         </Stack>

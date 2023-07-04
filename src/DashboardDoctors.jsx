@@ -42,7 +42,7 @@ export default function DashboardDoctors() {
                         sx={{ display: "inline" }}
                         component="span"
                         variant="body2"
-                        color="text.primary">
+                        color="text.secondary">
                         {val.Specialization}
                       </Typography>
                     </React.Fragment>

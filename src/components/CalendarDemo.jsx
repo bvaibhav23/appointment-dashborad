@@ -28,13 +28,6 @@ import EventForm from "./EventForm";
 const locales = {
   "en-IN": require("date-fns/locale/en-IN"),
 };
-const localizer = dateFnsLocalizer({
-  format,
-  parse,
-  startOfWeek,
-  getDay,
-  locales,
-});
 
 export default function CalendarDemo() {
   const { events, setEvents, preferences, setRecentActivities } =
@@ -55,8 +48,27 @@ export default function CalendarDemo() {
   });
   const [eventInfo, setEventInfo] = useState();
 
+  const localizer = dateFnsLocalizer({
+    format,
+    parse,
+    startOfWeek: () => {
+      return startOfWeek(new Date(), { weekStartsOn: weekStart });
+    },
+    getDay,
+    locales,
+  });
+  const dayOfWeekList = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   const [currentEvent, setCurrentEvent] = useState();
   const [slotDuration, setSlotDuration] = useState();
+  const [weekStart, setWeekStart] = useState();
   // console.log(preferences, slotDuration);
   const handleSelectSlot = useCallback(
     ({ start, end, slots }) => {
@@ -117,7 +129,7 @@ export default function CalendarDemo() {
 
     setEventData({ title: "" });
   };
-  console.log("events", events);
+  // console.log("events", events);
 
   const handleSelectEvent = useCallback(
     (event) => {
@@ -140,10 +152,22 @@ export default function CalendarDemo() {
     []
   );
 
-  useEffect(() => {
-    if (!preferences.slot) setSlotDuration(30);
-    else setSlotDuration(Number(preferences.slot.slice(0, 3)));
-  }, [preferences.slot]);
+  useEffect(
+    () => {
+      if (!preferences.slot) setSlotDuration(30);
+      else setSlotDuration(Number(preferences.slot.slice(0, 3)));
+      if (!preferences.weekStart) setWeekStart(0);
+      else setWeekStart(dayOfWeekList.indexOf(preferences.weekStart));
+    },
+    // eslint-disable-next-line
+    [preferences.slot]
+  );
+  // console.log(
+  //   preferences.dayStart.split(":")[0],
+  //   preferences.dayEnd.split(":")[0]
+  // );
+
+  const today = new Date();
   return (
     <Fragment>
       <Box
@@ -164,6 +188,22 @@ export default function CalendarDemo() {
               : preferences.view === "Monthly"
               ? Views.MONTH
               : Views.WEEK
+          }
+          min={
+            new Date(
+              today.getFullYear(),
+              today.getMonth(),
+              today.getDate(),
+              Number(preferences.dayStart.split(":")[0])
+            )
+          }
+          max={
+            new Date(
+              today.getFullYear(),
+              today.getMonth(),
+              today.getDate(),
+              Number(preferences.dayEnd.split(":")[0]) + 12
+            )
           }
           events={events}
           localizer={localizer}
@@ -233,7 +273,7 @@ export function FormOfDialog({
       {/* <Button variant="outlined" onClick={handleClickOpen}>
         Open form dialog
       </Button> */}
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog open={open}>
         <DialogTitle borderBottom={"1px solid rgb(230, 230, 230)"}>
           {edit ? "Edit Appointment" : "Add Appointment"}
         </DialogTitle>
