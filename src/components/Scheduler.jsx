@@ -23,11 +23,7 @@ const Scheduler = () => {
   };
 
   return (
-    <Grid
-      bgcolor="#f8f9fa"
-      container
-      sx={{ mt: 1 }}
-      justifyContent="space-evenly">
+    <Grid container sx={{ mt: 1 }} justifyContent="space-evenly">
       <Stack sx={{ display: { xs: "flex", md: "none" } }}>
         <FilterForm
           doctor={doctor}
