@@ -8,7 +8,7 @@ const DashboardCard = ({ title, value = 0 }) => {
         width: { xs: "12rem", md: "20rem" },
       }}>
       <CardContent>
-        <Typography variant="h6">{title}</Typography>
+        <Typography fontSize={18}>{title}</Typography>
         <Typography align="center" color="#7575ff" variant="h4">
           {value}
         </Typography>

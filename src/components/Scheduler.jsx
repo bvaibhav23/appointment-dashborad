@@ -1,4 +1,7 @@
 import {
+  Box,
+  Card,
+  CardContent,
   FormControl,
   Grid,
   MenuItem,
@@ -9,6 +12,7 @@ import {
 import React, { useContext, useState } from "react";
 import CalendarDemo from "./CalendarDemo";
 import { DataContext } from "./dataContext";
+import { waitingList } from "./DataSource";
 
 const Scheduler = () => {
   const { currentDoctorsData } = useContext(DataContext);
@@ -24,32 +28,36 @@ const Scheduler = () => {
       container
       sx={{ mt: 1 }}
       justifyContent="space-evenly">
-      <Grid
-        sx={{ display: { xs: "block", md: "none" } }}
-        item
-        xs={11}
-        sm={11}
-        md={2}>
+      <Stack sx={{ display: { xs: "flex", md: "none" } }}>
         <FilterForm
           doctor={doctor}
           handleChange={handleChange}
           currentDoctorsData={currentDoctorsData}
         />
-      </Grid>
+      </Stack>
       <Grid item xs={11} sm={11} md={9}>
         <CalendarDemo />
       </Grid>
-      <Grid
-        sx={{ display: { xs: "none", md: "block" } }}
-        item
-        xs={11}
-        sm={11}
-        md={2}>
-        <FilterForm
-          doctor={doctor}
-          handleChange={handleChange}
-          currentDoctorsData={currentDoctorsData}
-        />
+
+      <Grid item xs={11} sm={11} md={2}>
+        <Box
+          sx={{ display: { xs: "none", md: "block" } }}
+          item
+          xs={11}
+          sm={11}
+          md={2}>
+          <FilterForm
+            doctor={doctor}
+            handleChange={handleChange}
+            currentDoctorsData={currentDoctorsData}
+          />
+        </Box>
+        <Typography mt={2} align="center">
+          {" "}
+          Waiting List
+        </Typography>
+
+        <WaitingList />
       </Grid>
     </Grid>
   );
@@ -84,5 +92,47 @@ const FilterForm = ({ doctor, handleChange, currentDoctorsData }) => {
         ))}
       </Select>
     </FormControl>
+  );
+};
+
+const WaitingList = () => {
+  return (
+    <Box
+      display="flex"
+      gap={1}
+      mt={1}
+      justifyContent="space-evenly"
+      flexWrap="wrap"
+      sx={{
+        height: 500,
+        overflowY: "scroll",
+        "::-webkit-scrollbar ": {
+          display: "none",
+        },
+      }}>
+      {waitingList &&
+        waitingList.map((list) => (
+          <Card
+            draggable
+            sx={{
+              border: "1px solid #a09f9f ",
+              height: 70,
+              width: { md: 240, xs: 140 },
+              bgcolor: "#fff5f5",
+            }}>
+            <CardContent sx={{ p: 1 }}>
+              <Typography fontSize={12} color="text.primary">
+                {list.title}
+              </Typography>
+              <Typography fontSize={12} color="text.primary">
+                {list.start && list.start.toLocaleTimeString()}
+              </Typography>
+              <Typography fontSize={12} color="text.secondary">
+                {`${list.DepartmentName} - ${list.Treatment}`}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
+    </Box>
   );
 };

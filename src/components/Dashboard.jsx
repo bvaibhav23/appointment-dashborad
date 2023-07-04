@@ -67,7 +67,9 @@ const Dashboard = () => {
               Today's Appointments
             </Typography>
             <Link to="/schedule">
-              <Typography variant="p">Book appointment</Typography>
+              <Typography variant="p" fontSize={14}>
+                Book appointment
+              </Typography>
             </Link>
           </Stack>
 
