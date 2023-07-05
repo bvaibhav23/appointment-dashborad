@@ -10,6 +10,7 @@ import {
   FormControl,
   FormControlLabel,
   FormLabel,
+  IconButton,
   Radio,
   RadioGroup,
   Stack,
@@ -20,6 +21,7 @@ import {
   experienceData,
   specializationData,
 } from "./DataSource";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
 export default function FormDialog({ open, setOpen, doctorData }) {
   const { currentDoctorsData, setCurrentDoctorData, setRecentActivities } =
@@ -150,9 +152,22 @@ export default function FormDialog({ open, setOpen, doctorData }) {
   return (
     <div>
       {newDoctor && (
-        <Dialog open={open} onClose={handleClose}>
-          <DialogTitle borderBottom={"1px solid rgb(230, 230, 230)"}>
-            {doctorData ? "Edit Doctor" : "New Doctor"}
+        <Dialog open={open} sx={{ width: 450, m: "auto" }}>
+          <DialogTitle
+            sx={{ p: 0 }}
+            borderBottom={"1px solid rgb(230, 230, 230)"}>
+            <Stack
+              bgcolor={"#7575ff"}
+              color="white"
+              direction="row"
+              p={1}
+              justifyContent="space-between"
+              alignItems="center">
+              {doctorData ? "Edit Doctor" : "New Doctor"}
+              <IconButton onClick={() => setOpen(false)}>
+                <CloseRoundedIcon sx={{ color: "white" }} />
+              </IconButton>
+            </Stack>
           </DialogTitle>
           <DialogContent>
             <Stack mt={1}>

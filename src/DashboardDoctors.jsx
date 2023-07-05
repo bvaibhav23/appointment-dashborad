@@ -22,7 +22,7 @@ export default function DashboardDoctors() {
       </Stack>
       <List
         sx={{
-          height: 332,
+          height: 350,
           width: "100%",
           bgcolor: "background.paper",
           overflowY: "scroll",

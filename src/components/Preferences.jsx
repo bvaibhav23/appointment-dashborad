@@ -12,7 +12,7 @@ import { DataContext } from "./dataContext";
 const Preferences = () => {
   const { preferences, setPreferences } = useContext(DataContext);
   return (
-    <Box p={5}>
+    <Box sx={{ p: { md: 5, xs: 2 } }}>
       <Typography
         variant="h6"
         fontWeight="bold"

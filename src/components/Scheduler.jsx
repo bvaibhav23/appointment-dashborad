@@ -4,6 +4,7 @@ import {
   CardContent,
   FormControl,
   Grid,
+  InputLabel,
   MenuItem,
   Select,
   Stack,
@@ -48,7 +49,7 @@ const Scheduler = () => {
             currentDoctorsData={currentDoctorsData}
           />
         </Box>
-        <Typography mt={2} align="center">
+        <Typography mt={2} align="center" fontWeight="bold">
           {" "}
           Waiting List
         </Typography>
@@ -63,18 +64,15 @@ export default Scheduler;
 
 const FilterForm = ({ doctor, handleChange, currentDoctorsData }) => {
   return (
-    <FormControl sx={{ m: 1 }} fullWidth>
-      <Typography fontSize={14} color={"GrayText"}>
-        Choose Specialist{" "}
-      </Typography>
+    <FormControl sx={{ width: 200, m: 1 }} size="small">
+      <InputLabel id="demo-select-small-label">Choose Specialist</InputLabel>
       <Select
-        id="demo-simple-select"
+        labelId="demo-select-small-label"
+        id="demo-select-small"
         value={doctor}
-        size="small"
-        variant="outlined"
-        sx={{ bgcolor: "#fff" }}
-        placeholder="Choose Specialist"
-        onChange={(e) => handleChange(e)}>
+        label="Age"
+        sx={{ bgcolor: "#fff", borderRadius: 2 }}
+        onChange={handleChange}>
         {currentDoctorsData.map((doc) => (
           <MenuItem value={doc.Id}>
             <Stack direction="row" alignItems="center" gap={1}>
@@ -110,28 +108,34 @@ const WaitingList = () => {
         },
       }}>
       {waitingList &&
-        waitingList.map((list) => (
-          <Card
-            draggable
-            sx={{
-              border: "1px solid #a09f9f ",
-              height: 70,
-              width: { md: 240, xs: 140 },
-              bgcolor: "#fff5f5",
-            }}>
-            <CardContent sx={{ p: 1 }}>
-              <Typography fontSize={12} color="text.primary">
-                {list.title}
-              </Typography>
-              <Typography fontSize={12} color="text.primary">
-                {list.start && list.start.toLocaleTimeString()}
-              </Typography>
-              <Typography fontSize={12} color="text.secondary">
-                {`${list.DepartmentName} - ${list.Treatment}`}
-              </Typography>
-            </CardContent>
-          </Card>
-        ))}
+        waitingList.map((list) => {
+          let time = list.start.toLocaleTimeString().split(":");
+          let timeend = list.end.toLocaleTimeString().split(":");
+          return (
+            <Card
+              draggable
+              sx={{
+                border: "1px solid #a09f9f ",
+                height: 70,
+                width: { md: 240, xs: 140 },
+                bgcolor: "#fff5f5",
+              }}>
+              <CardContent sx={{ p: 1 }}>
+                <Typography fontSize={12} color="text.primary">
+                  {list.title}
+                </Typography>
+                <Typography fontSize={12} color="text.primary">
+                  {`${time[0]}:${time[1]} ${time[2].slice(2)} - ${timeend[0]}:${
+                    timeend[1]
+                  } ${timeend[2].slice(2)}`}
+                </Typography>
+                <Typography fontSize={12} color="text.secondary">
+                  {`${list.DepartmentName} - ${list.Treatment}`}
+                </Typography>
+              </CardContent>
+            </Card>
+          );
+        })}
     </Box>
   );
 };

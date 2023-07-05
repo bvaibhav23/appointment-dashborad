@@ -87,6 +87,7 @@ function ResponsiveDrawer(props) {
             }}
             onClick={() => {
               navTo(item.routeTo);
+              handleDrawerToggle();
             }}
             key={item.name}
             disablePadding>

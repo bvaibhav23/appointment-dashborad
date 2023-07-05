@@ -22,6 +22,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { Autocomplete, Box, IconButton, Stack } from "@mui/material";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import FormDialog from "./PatientForm";
 import EventForm from "./EventForm";
 
@@ -274,11 +275,25 @@ export function FormOfDialog({
       {/* <Button variant="outlined" onClick={handleClickOpen}>
         Open form dialog
       </Button> */}
-      <Dialog open={open}>
-        <DialogTitle borderBottom={"1px solid rgb(230, 230, 230)"}>
-          {edit ? "Edit Appointment" : "Add Appointment"}
+      <Dialog open={open} sx={{ width: 450, m: "auto" }}>
+        <DialogTitle
+          sx={{ p: 0 }}
+          borderBottom={"1px solid rgb(230, 230, 230)"}>
+          <Stack
+            bgcolor={"#7575ff"}
+            color="white"
+            direction="row"
+            p={1}
+            justifyContent="space-between"
+            alignItems="center">
+            {edit ? "Edit Appointment" : "Add Appointment"}
+            <IconButton onClick={() => handleClose()}>
+              <CloseRoundedIcon sx={{ color: "white" }} />
+            </IconButton>
+          </Stack>
         </DialogTitle>
-        <DialogContent>
+
+        <DialogContent sx={{ p: 1 }}>
           <Stack mt={1}>
             <label
               style={{
@@ -481,12 +496,14 @@ export function FormOfDialog({
           <Button
             onClick={handleClose}
             variant="outlined"
+            size="small"
             sx={{ color: "#7575ff" }}>
             Cancel
           </Button>
           <Button
-            sx={{ mr: 2, bgcolor: "#7575ff" }}
+            sx={{ bgcolor: "#7575ff" }}
             variant="contained"
+            size="small"
             onClick={() => {
               handleSubmit();
               handleClose();

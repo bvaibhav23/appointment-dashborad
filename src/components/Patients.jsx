@@ -78,7 +78,7 @@ const Patients = () => {
 
   // console.log(currentPatient);
   return (
-    <Box p={5}>
+    <Box sx={{ p: { md: 5, xs: 2 }, opacity: open ? 0.5 : 1 }}>
       <Typography
         variant="h6"
         fontWeight="bold"
@@ -97,6 +97,7 @@ const Patients = () => {
           <TextField
             size="small"
             InputProps={{ disableUnderline: true }}
+            placeholder="Search..."
             onChange={(e) => setSearch(e.target.value)}
             value={search}
             variant="standard"></TextField>
@@ -115,19 +116,22 @@ const Patients = () => {
           sx={{
             ml: 1,
             bgcolor: "#7575ff",
-            fontSize: { xs: ".5rem", md: ".8rem" },
             ":hover": { bgcolor: "#7f7fed" },
+            width: 200,
           }}
+          size="small"
           variant="contained"
           onClick={() => {
             setOpenForm(true);
             setCurrentPatient([]);
           }}>
-          Add New Patient
+          Add Patient
         </Button>
       </Box>
 
-      <TableContainer sx={{ borderTop: "5px solid #7575ff" }} component={Paper}>
+      <TableContainer
+        sx={{ borderTop: "5px solid #7575ff", maxHeight: { md: 450, xs: 600 } }}
+        component={Paper}>
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -189,34 +193,30 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 410,
   bgcolor: "background.paper",
-  borderRadius: 1,
+  borderRadius: 3,
   boxShadow: 24,
   outLine: "none",
   paddingBottom: 1,
 };
 
 function PatientInput({ openForm, setOpenForm, currentPatient }) {
-  const handleClose = () => {
-    setOpenForm(false);
-  };
-
   return (
-    <React.Fragment>
+    <div>
       {/* <Button onClick={handleOpen}>Open Child Modal</Button> */}
       <Modal
         open={openForm}
-        onClose={handleClose}
         aria-labelledby="child-modal-title"
         aria-describedby="child-modal-description">
-        <FormDialog
-          open={openForm}
-          setOpen={setOpenForm}
-          currentPatient={currentPatient}
-        />
+        <Box sx={{ ...style, overflow: "clip" }}>
+          <FormDialog
+            open={openForm}
+            setOpen={setOpenForm}
+            currentPatient={currentPatient}
+          />
+        </Box>
       </Modal>
-    </React.Fragment>
+    </div>
   );
 }
 
@@ -234,25 +234,30 @@ function NestedModal({
     setCurrApp(events.filter((eve) => eve.title === currentPatient.title));
   }, [currentPatient, events]);
   console.log(currApp);
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   return (
     <div>
       <Modal
         open={open}
-        onClose={handleClose}
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description">
         {currentPatient && (
-          <Box sx={{ ...style }}>
-            <Typography p={1} variant="h6" borderBottom={1}>
-              Patient Details
-            </Typography>
-            <Box sx={{ height: 400, overflowY: "scroll" }}>
+          <Box sx={{ ...style, overflow: "clip" }}>
+            <Stack
+              bgcolor={"#7575ff"}
+              color="white"
+              direction="row"
+              p={1}
+              justifyContent="space-between"
+              alignItems="center">
+              <Typography variant="h6">Patient Details</Typography>
+              <IconButton onClick={() => setOpen(false)}>
+                <CloseOutlinedIcon sx={{ color: "white" }} />
+              </IconButton>
+            </Stack>
+            <Box sx={{ mb: 1, height: 400, overflowY: "scroll" }}>
               <Stack direction="row">
-                <Stack m={2} gap={3}>
+                <Stack m={2} gap={2}>
                   <Typography
                     variant="p"
                     fontSize="small"
@@ -310,7 +315,7 @@ function NestedModal({
                     Symptoms
                   </Typography>
                 </Stack>
-                <Stack m={2} gap={3}>
+                <Stack m={2} gap={2}>
                   <Typography variant="p" fontSize="small">
                     {currentPatient.Id}
                   </Typography>

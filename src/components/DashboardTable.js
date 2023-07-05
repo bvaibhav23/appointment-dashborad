@@ -20,16 +20,21 @@ export default function BasicTable({ todaysEvents }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {todaysEvents.map((row) => (
-            <TableRow
-              key={row.start}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-              <TableCell>{new Date(row.start).toLocaleTimeString()}</TableCell>
-              <TableCell>{row.title}</TableCell>
-              <TableCell>{row.DoctorName}</TableCell>
-              <TableCell>{row.Symptoms}</TableCell>
-            </TableRow>
-          ))}
+          {todaysEvents.map((row) => {
+            let time = new Date(row.start).toLocaleTimeString().split(":");
+            return (
+              <TableRow
+                key={row.start}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+                <TableCell>{`${time[0]}:${time[1]} ${time[2].slice(
+                  2
+                )}`}</TableCell>
+                <TableCell>{row.title}</TableCell>
+                <TableCell>{row.DoctorName}</TableCell>
+                <TableCell>{row.Symptoms}</TableCell>
+              </TableRow>
+            );
+          })}
         </TableBody>
       </Table>
     </TableContainer>

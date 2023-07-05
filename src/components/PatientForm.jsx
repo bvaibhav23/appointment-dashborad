@@ -10,12 +10,13 @@ import {
   FormControl,
   FormControlLabel,
   FormLabel,
+  IconButton,
   Radio,
   RadioGroup,
   Stack,
   TextField,
 } from "@mui/material";
-
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 export default function FormDialog({ open, setOpen, currentPatient }) {
   const { patientsInfo, setPatientsInfo, setRecentActivities } =
     useContext(DataContext);
@@ -60,9 +61,22 @@ export default function FormDialog({ open, setOpen, currentPatient }) {
   return (
     <div>
       {newPatient && (
-        <Dialog open={open} onClose={handleClose}>
-          <DialogTitle borderBottom={"1px solid rgb(230, 230, 230)"}>
-            {currentPatient.Id ? "Edit Patient" : "New Patient"}
+        <Dialog open={open}>
+          <DialogTitle
+            sx={{ p: 0 }}
+            borderBottom={"1px solid rgb(230, 230, 230)"}>
+            <Stack
+              bgcolor={"#7575ff"}
+              color="white"
+              direction="row"
+              p={1}
+              justifyContent="space-between"
+              alignItems="center">
+              {currentPatient.Id ? "Edit Patient" : "New Patient"}
+              <IconButton onClick={() => setOpen(false)}>
+                <CloseRoundedIcon sx={{ color: "white" }} />
+              </IconButton>
+            </Stack>
           </DialogTitle>
           <DialogContent>
             <Stack mt={1}>

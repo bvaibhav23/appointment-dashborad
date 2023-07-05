@@ -142,9 +142,9 @@ const DoctorsInfo = () => {
               </Stack>
             </Stack>
           </Stack>
-          <Stack sx={{ mt: { xs: 3, md: 0 } }} gap={1}>
+          <Stack sx={{ mt: { xs: 4, md: 0 } }} gap={1}>
             <Stack direction="row" alignItems="center" gap={1}>
-              <Typography variant="p" fontSize={15} color={"GrayText"}>
+              <Typography variant="p" fontSize={16} color={"GrayText"}>
                 Break Hours:
               </Typography>
               <AddCircleRoundedIcon
@@ -153,22 +153,22 @@ const DoctorsInfo = () => {
               />
             </Stack>
             {doctorData.WorkDays && (
-              <Stack direction="row" gap={2}>
+              <Stack direction="row" gap={5}>
                 <Stack gap={1}>
                   {doctorData.WorkDays.map((val, i) => (
-                    <Typography key={i} variant="p" fontSize={13}>
+                    <Typography key={i} variant="p" fontSize={14}>
                       {val.Day}
                     </Typography>
                   ))}
                 </Stack>
-                <Stack gap={1}>
+                <Stack gap={1} alignItems="center" justifyContent="center">
                   {doctorData.WorkDays.map((val, i) =>
                     val.State === "TimeOff" ? (
-                      <Typography key={i} fontSize={13} color="red">
+                      <Typography key={i} fontSize={14} color="red">
                         TIME OFF
                       </Typography>
                     ) : (
-                      <Typography key={i} variant="p" fontSize={13}>
+                      <Typography key={i} variant="p" fontSize={14}>
                         {val.WorkStartHour.toLocaleTimeString().replace(
                           ":00 ",
                           " "

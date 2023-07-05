@@ -31,7 +31,7 @@ const Doctors = () => {
   }, [specialty, currentDoctorsData]);
   // console.log(filterData);
   return (
-    <Box p={5}>
+    <Box sx={{ p: { md: 5, xs: 2 } }}>
       <Typography
         variant="h6"
         fontWeight="bold"
@@ -59,14 +59,16 @@ const Doctors = () => {
           sx={{
             ml: 1,
             bgcolor: "#7575ff",
-            fontSize: { xs: ".5rem", md: ".8rem" },
+            // fontSize: { xs: 8 },
+            width: 200,
             ":hover": { bgcolor: "#7f7fed" },
           }}
+          size="small"
           variant="contained"
           onClick={() => {
             setOpen(true);
           }}>
-          Add New Doctor
+          Add Doctor
         </Button>
       </Box>
       <Box
@@ -81,7 +83,7 @@ const Doctors = () => {
           <Card
             key={info.Id}
             sx={{
-              width: { xs: "100%", md: "45%" },
+              width: { xs: "100%", md: "48%" },
               ":hover": { boxShadow: " .1rem .1rem 2rem .1rem #7575ff" },
             }}
             onClick={() => navTo(`/doctor/${info.Id}`)}>
