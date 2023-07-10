@@ -83,7 +83,7 @@ const Doctors = () => {
           <Card
             key={info.Id}
             sx={{
-              width: { xs: "100%", md: "48%", sm: "40%" },
+              width: { xs: "100%", md: "48%" },
               ":hover": { boxShadow: " .1rem .1rem 2rem .1rem #7575ff" },
             }}
             onClick={() => navTo(`/doctor/${info.Id}`)}>

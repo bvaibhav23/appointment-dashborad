@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
@@ -37,8 +37,8 @@ import Dashboard from "./Dashboard/Dashboard";
 
 const drawerWidth = 240;
 
-function ResponsiveDrawer(props) {
-  const { window } = props;
+function ResponsiveDrawer() {
+  // const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navTo = useNavigate();
@@ -49,9 +49,10 @@ function ResponsiveDrawer(props) {
   }, [currURL]);
 
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
+    // window.innerWidth
+    if (window.innerWidth < 500) setMobileOpen(!mobileOpen);
   };
-
+  console.log(window.innerWidth);
   const drawer = (
     <div>
       <Stack justifyContent="center" alignItems="center" gap={1} mb={2} mt={3}>
@@ -102,8 +103,8 @@ function ResponsiveDrawer(props) {
     </div>
   );
 
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
+  // const container =
+  //   window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box
@@ -153,7 +154,7 @@ function ResponsiveDrawer(props) {
         aria-label="mailbox folders">
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
-          container={container}
+          // container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
@@ -197,12 +198,12 @@ function ResponsiveDrawer(props) {
   );
 }
 
-ResponsiveDrawer.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
+// ResponsiveDrawer.propTypes = {
+//   /**
+//    * Injected by the documentation to work in an iframe.
+//    * You won't need it on your project.
+//    */
+//   window: PropTypes.func,
+// };
 
 export default ResponsiveDrawer;
