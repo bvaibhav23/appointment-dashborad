@@ -12,8 +12,7 @@ import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { useContext } from "react";
-import { DataContext } from "./dataContext";
-
+import { DataContext } from "../../dataContext";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
@@ -23,7 +22,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { Autocomplete, Box, IconButton, Stack } from "@mui/material";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
-import FormDialog from "./PatientForm";
+import FormDialog from "../Patients/PatientForm";
 import EventForm from "./EventForm";
 
 const locales = {

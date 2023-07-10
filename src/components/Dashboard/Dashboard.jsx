@@ -1,12 +1,12 @@
 import { Grid, Stack, Typography } from "@mui/material";
 import React, { useContext } from "react";
-import EventChart from "./EventChart";
+import { Link } from "react-router-dom";
+import { DataContext } from "../../dataContext";
 import DashboardCard from "./DashboardCard";
 import BasicTable from "./DashboardTable";
-import DashboardDoctors from "../DashboardDoctors";
-import { Link } from "react-router-dom";
-import { DataContext } from "./dataContext";
+import EventChart from "./EventChart";
 import RecentActivities from "./RecentActivities";
+import DashboardDoctors from "./DashboardDoctors";
 
 const Dashboard = () => {
   const { events } = useContext(DataContext);

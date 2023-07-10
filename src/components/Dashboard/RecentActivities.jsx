@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import React, { useContext } from "react";
 import { Box, Stack } from "@mui/material";
 // import { activityData } from "./DataSource";
-import { DataContext } from "./dataContext";
+import { DataContext } from "../../dataContext";
 
 export default function RecentActivities() {
   const { recentActivities } = useContext(DataContext);

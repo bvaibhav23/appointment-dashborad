@@ -33,5 +33,3 @@ const sideBarData = [
   { name: "About", icon: <InfoIcon color="gray" />, routeTo: "/about" },
 ];
 export default sideBarData;
-
-export const eventsData = [];

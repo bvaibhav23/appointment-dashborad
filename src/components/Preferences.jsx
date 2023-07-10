@@ -1,13 +1,14 @@
 import { Autocomplete, Box, Stack, TextField, Typography } from "@mui/material";
 import React, { useContext } from "react";
+
+import { DataContext } from "../dataContext";
 import {
   dayOfWeekList,
   endHours,
   startHours,
   timeSlots,
   views,
-} from "./DataSource";
-import { DataContext } from "./dataContext";
+} from "../DataSource";
 
 const Preferences = () => {
   const { preferences, setPreferences } = useContext(DataContext);

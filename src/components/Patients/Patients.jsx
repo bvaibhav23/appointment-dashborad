@@ -21,7 +21,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import React, { useContext, useEffect, useState } from "react";
 
-import { DataContext } from "./dataContext";
+import { DataContext } from "../../dataContext";
 import FormDialog from "./PatientForm";
 
 const Patients = () => {
@@ -78,7 +78,7 @@ const Patients = () => {
 
   // console.log(currentPatient);
   return (
-    <Box sx={{ p: { md: 5, xs: 2 }, opacity: open ? 0.5 : 1 }}>
+    <Box sx={{ p: { md: 5, sm: 5, xs: 2 }, opacity: open ? 0.5 : 1 }}>
       <Typography
         variant="h6"
         fontWeight="bold"

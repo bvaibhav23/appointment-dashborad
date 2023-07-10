@@ -6,7 +6,7 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import React, { useContext } from "react";
-import { DataContext } from "./components/dataContext";
+import { DataContext } from "../../dataContext";
 import { Box, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 

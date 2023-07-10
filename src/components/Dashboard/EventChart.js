@@ -10,7 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { DataContext } from "./dataContext";
+import { DataContext } from "../../dataContext";
 
 ChartJS.register(
   CategoryScale,

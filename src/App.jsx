@@ -1,13 +1,13 @@
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import { DataContext } from "./components/dataContext";
+import { DataContext } from "./dataContext";
 import { useState } from "react";
 import {
   hospitalData,
   doctorsData,
   patientsData,
   activityData,
-} from "./components/DataSource";
+} from "./DataSource";
 import ResponsiveDrawer from "./components/SideNav";
 function App() {
   const [events, setEvents] = useState(hospitalData);

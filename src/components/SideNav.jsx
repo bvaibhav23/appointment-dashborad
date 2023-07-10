@@ -26,14 +26,14 @@ import {
   useLocation,
   useNavigate,
 } from "react-router-dom";
-import Dashboard from "./Dashboard";
-import Scheduler from "./Scheduler";
-import Doctors from "./Doctors";
-import Patients from "./Patients";
-import Preferences from "./Preferences";
-import About from "./About";
 import { AppBar, Stack } from "@mui/material";
-import DoctorsInfo from "./DoctorsInfo";
+import Scheduler from "./Scheduler/Scheduler";
+import DoctorsInfo from "./Doctors/DoctorsInfo";
+import Patients from "./Patients/Patients";
+import Preferences from "./Preferences";
+import Doctors from "./Doctors/Doctors";
+import About from "./About";
+import Dashboard from "./Dashboard/Dashboard";
 
 const drawerWidth = 240;
 

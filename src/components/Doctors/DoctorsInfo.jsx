@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
-import { DataContext } from "./dataContext";
+import { DataContext } from "../../dataContext";
 import FormDialog from "./DoctorForm";
 
 const DoctorsInfo = () => {

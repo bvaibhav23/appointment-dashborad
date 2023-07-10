@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { DataContext } from "./dataContext";
+import { DataContext } from "../../dataContext";
 import {
   Autocomplete,
   Button,
@@ -20,7 +20,7 @@ import {
   dutyTimingsData,
   experienceData,
   specializationData,
-} from "./DataSource";
+} from "../../DataSource";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
 export default function FormDialog({ open, setOpen, doctorData }) {

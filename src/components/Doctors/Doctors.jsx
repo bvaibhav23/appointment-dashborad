@@ -12,7 +12,7 @@ import {
 import React, { useContext, useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
-import { DataContext } from "./dataContext";
+import { DataContext } from "../../dataContext";
 import FormDialog from "./DoctorForm";
 
 const Doctors = () => {
@@ -31,7 +31,7 @@ const Doctors = () => {
   }, [specialty, currentDoctorsData]);
   // console.log(filterData);
   return (
-    <Box sx={{ p: { md: 5, xs: 2 } }}>
+    <Box sx={{ p: { md: 5, sm: 5, xs: 2 } }}>
       <Typography
         variant="h6"
         fontWeight="bold"
@@ -83,7 +83,7 @@ const Doctors = () => {
           <Card
             key={info.Id}
             sx={{
-              width: { xs: "100%", md: "48%" },
+              width: { xs: "100%", md: "48%", sm: "40%" },
               ":hover": { boxShadow: " .1rem .1rem 2rem .1rem #7575ff" },
             }}
             onClick={() => navTo(`/doctor/${info.Id}`)}>

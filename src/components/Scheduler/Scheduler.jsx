@@ -12,9 +12,8 @@ import {
 } from "@mui/material";
 import React, { useContext, useState } from "react";
 import CalendarDemo from "./CalendarDemo";
-import { DataContext } from "./dataContext";
-import { waitingList } from "./DataSource";
-
+import { DataContext } from "../../dataContext";
+import { waitingList } from "../../DataSource";
 const Scheduler = () => {
   const { currentDoctorsData } = useContext(DataContext);
   const [doctor, setDoctor] = useState("");

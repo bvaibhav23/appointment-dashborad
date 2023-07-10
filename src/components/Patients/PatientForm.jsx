@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import { DataContext } from "./dataContext";
 import {
   Autocomplete,
   Button,
@@ -17,6 +16,7 @@ import {
   TextField,
 } from "@mui/material";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import { DataContext } from "../../dataContext";
 export default function FormDialog({ open, setOpen, currentPatient }) {
   const { patientsInfo, setPatientsInfo, setRecentActivities } =
     useContext(DataContext);
