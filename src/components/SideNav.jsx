@@ -52,7 +52,7 @@ function ResponsiveDrawer() {
     // window.innerWidth
     if (window.innerWidth < 500) setMobileOpen(!mobileOpen);
   };
-  console.log(window.innerWidth);
+  // console.log(window.innerWidth);
   const drawer = (
     <div>
       <Stack justifyContent="center" alignItems="center" gap={1} mb={2} mt={3}>
